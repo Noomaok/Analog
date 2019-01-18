@@ -34,11 +34,12 @@ class Graph
 public:
 //----------------------------------------------------- Méthodes publiques
     void createGraphFile();
+    
     // Mode d'emploi :
     //
     // Contrat :
     //
-    
+
 
 
 

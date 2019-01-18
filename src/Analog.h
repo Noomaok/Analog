@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Analog  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+//---------- Interface de la classe <Analog> (fichier Analog.h) ----------------
+#if ! defined ( ANALOG_H )
+#define ANALOG_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -17,12 +17,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <Analog>
 //
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class Analog
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    Analog & operator = ( const Analog & unAnalog );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    Analog ( const Analog & unAnalog );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    Analog ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~Analog ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,6 +71,6 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <Analog>
 
-#endif // XXX_H
+#endif // ANALOG_H

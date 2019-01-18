@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Query  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+//---------- Interface de la classe <Query> (fichier Query.h) ----------------
+#if ! defined ( QUERY_H )
+#define QUERY_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -17,12 +17,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <Query>
 //
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class Query
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    Query & operator = ( const Query & unQuery );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    Query ( const Query & unQuery );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    Query ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~Query ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,6 +71,6 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <Query>
 
-#endif // XXX_H
+#endif // QUERY_H

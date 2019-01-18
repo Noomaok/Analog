@@ -1,12 +1,12 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Parser  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Xxx> (fichier Xxx.cpp) ------------
+//---------- Réalisation de la classe <Parser> (fichier Parser.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,14 +15,14 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+#include "Parser.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Xxx::Méthode ( liste des paramètres )
+// type Parser::Méthode ( liste des paramètres )
 // Algorithme :
 //
 //{
@@ -30,7 +30,7 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Xxx & Xxx::operator = ( const Xxx & unXxx )
+Parser & Parser::operator = ( const Parser & unParser )
 // Algorithme :
 //
 {
@@ -38,34 +38,34 @@ Xxx & Xxx::operator = ( const Xxx & unXxx )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Xxx::Xxx ( const Xxx & unXxx )
+Parser::Parser ( const Parser & unParser )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+    cout << "Appel au constructeur de copie de <Parser>" << endl;
 #endif
-} //----- Fin de Xxx (constructeur de copie)
+} //----- Fin de Parser (constructeur de copie)
 
 
-Xxx::Xxx ( )
+Parser::Parser ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au constructeur de <Parser>" << endl;
 #endif
-} //----- Fin de Xxx
+} //----- Fin de Parser
 
 
-Xxx::~Xxx ( )
+Parser::~Parser ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <Parser>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~Parser
 
 
 //------------------------------------------------------------------ PRIVE

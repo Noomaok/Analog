@@ -1,12 +1,12 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Query  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Xxx> (fichier Xxx.cpp) ------------
+//---------- Réalisation de la classe <Query> (fichier Query.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,14 +15,14 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+#include "Query.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Xxx::Méthode ( liste des paramètres )
+// type Query::Méthode ( liste des paramètres )
 // Algorithme :
 //
 //{
@@ -30,7 +30,7 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Xxx & Xxx::operator = ( const Xxx & unXxx )
+Query & Query::operator = ( const Query & unQuery )
 // Algorithme :
 //
 {
@@ -38,34 +38,34 @@ Xxx & Xxx::operator = ( const Xxx & unXxx )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Xxx::Xxx ( const Xxx & unXxx )
+Query::Query ( const Query & unQuery )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+    cout << "Appel au constructeur de copie de <Query>" << endl;
 #endif
-} //----- Fin de Xxx (constructeur de copie)
+} //----- Fin de Query (constructeur de copie)
 
 
-Xxx::Xxx ( )
+Query::Query ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au constructeur de <Query>" << endl;
 #endif
-} //----- Fin de Xxx
+} //----- Fin de Query
 
 
-Xxx::~Xxx ( )
+Query::~Query ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <Query>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~Query
 
 
 //------------------------------------------------------------------ PRIVE

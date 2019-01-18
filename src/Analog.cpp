@@ -1,12 +1,12 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Analog  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Xxx> (fichier Xxx.cpp) ------------
+//---------- Réalisation de la classe <Analog> (fichier Analog.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,14 +15,14 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+#include "Analog.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Xxx::Méthode ( liste des paramètres )
+// type Analog::Méthode ( liste des paramètres )
 // Algorithme :
 //
 //{
@@ -30,7 +30,7 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Xxx & Xxx::operator = ( const Xxx & unXxx )
+Analog & Analog::operator = ( const Analog & unAnalog )
 // Algorithme :
 //
 {
@@ -38,34 +38,34 @@ Xxx & Xxx::operator = ( const Xxx & unXxx )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Xxx::Xxx ( const Xxx & unXxx )
+Analog::Analog ( const Analog & unAnalog )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+    cout << "Appel au constructeur de copie de <Analog>" << endl;
 #endif
-} //----- Fin de Xxx (constructeur de copie)
+} //----- Fin de Analog (constructeur de copie)
 
 
-Xxx::Xxx ( )
+Analog::Analog ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au constructeur de <Analog>" << endl;
 #endif
-} //----- Fin de Xxx
+} //----- Fin de Analog
 
 
-Xxx::~Xxx ( )
+Analog::~Analog ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <Analog>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~Analog
 
 
 //------------------------------------------------------------------ PRIVE

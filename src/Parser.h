@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Parser  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+//---------- Interface de la classe <Parser> (fichier Parser.h) ----------------
+#if ! defined ( PARSER_H )
+#define PARSER_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -17,12 +17,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <Parser>
 //
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class Parser
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    Parser & operator = ( const Parser & unParser );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    Parser ( const Parser & unParser );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    Parser ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~Parser ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,6 +71,6 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <Parser>
 
-#endif // XXX_H
+#endif // PARSER_H

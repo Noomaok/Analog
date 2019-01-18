@@ -30,11 +30,10 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Parser & Parser::operator = ( const Parser & unParser )
+//Parser & Parser::operator = ( const Parser & unParser )
 // Algorithme :
 //
-{
-} //----- Fin de operator =
+//----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur

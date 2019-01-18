@@ -39,11 +39,10 @@ vector<string> Query::Split(string strToSplit, char delimiter)
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Query & Query::operator = ( const Query & unQuery )
+//Query & Query::operator = ( const Query & unQuery )
 // Algorithme :
 //
-{
-} //----- Fin de operator =
+//----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur

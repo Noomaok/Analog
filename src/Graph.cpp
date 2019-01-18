@@ -30,11 +30,10 @@ void Graph::createGraphFile()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Graph & Graph::operator = ( const Graph & unGraph )
+//Graph & Graph::operator = ( const Graph & unGraph )
 // Algorithme :
 //
-{
-} //----- Fin de operator =
+//----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur

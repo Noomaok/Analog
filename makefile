@@ -13,11 +13,11 @@ all:
 
 debug:
 	$(ECHO) "Build debug version of <$(EXE)>"
-	$(CPP) $(CPPFLAGS) $(EXE) $(REAL)
+	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
 
 release:
 	$(ECHO) "Build release version of <$(EXE)>"
-	$(CPP) $(EXE) $(REAL)
+	@ $(CPP) -o $(EXE) $(REAL)
 
 clean:
 	rm -f $(EXE)

@@ -7,17 +7,17 @@ ECHO = @echo
 
 all:
 	$(ECHO) "- all     : Display this message"
-	$(ECHO) "- debug   : Build debug version of <Analog)>"
+	$(ECHO) "- debug   : Build debug version of <Analog>"
 	$(ECHO) "- release : Build release version of <Analog>"
 	$(ECHO) "- clean   : Delete all generated files"
 
 debug:
 	$(ECHO) "Build debug version of <$(EXE)>"
-	$(CPP) $(CPPFLAGS) -o $(EXE) $(INT) $(REAL)
+	$(CPP) $(CPPFLAGS) $(EXE) $(REAL)
 
 release:
 	$(ECHO) "Build release version of <$(EXE)>"
-	$(CPP) -o $(EXE) $(INT) $(REAL)
+	$(CPP) $(EXE) $(REAL)
 
 clean:
 	rm -f $(EXE)

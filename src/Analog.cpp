@@ -28,6 +28,11 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
+int main(int argc, char * argv[])
+{
+    
+}
+
 
 //------------------------------------------------- Surcharge d'opérateurs
 Analog & Analog::operator = ( const Analog & unAnalog )

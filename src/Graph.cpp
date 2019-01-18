@@ -22,11 +22,11 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Graph::Méthode ( liste des paramètres )
+void Graph::createGraphFile()
 // Algorithme :
 //
-//{
-//} //----- Fin de Méthode
+{
+} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -48,7 +48,7 @@ Graph::Graph ( const Graph & unGraph )
 } //----- Fin de Graph (constructeur de copie)
 
 
-Graph::Graph ( )
+Graph::Graph (set<Query> queryList)
 // Algorithme :
 //
 {

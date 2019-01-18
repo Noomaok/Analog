@@ -12,6 +12,11 @@
 
 //--------------------------------------------------- Interfaces utilisées
 
+#include <set>
+#include <map>
+
+#include "Query.h"
+
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -28,11 +33,14 @@ class Graph
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
+    void createGraphFile();
     // Mode d'emploi :
     //
     // Contrat :
     //
+    
+
+
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -50,7 +58,7 @@ public:
     // Contrat :
     //
 
-    Graph ( );
+    Graph (set<Query> queryList);
     // Mode d'emploi :
     //
     // Contrat :
@@ -68,6 +76,8 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
+
+    map<string,int> nodeLinks;
 
 };
 

@@ -11,10 +11,23 @@
 #define QUERY_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include <vector>
+#include <string>
+
+using namespace std;
 
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
+typedef struct Date_t{
+    int day;
+    string mounth;
+    int year;
+    int hour;
+    int minute;
+    int second;
+    int offset;
+} Date_t;
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Query>
@@ -28,7 +41,7 @@ class Query
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
+    vector<string> Split(string strToSplit, char delimiter);
     // Mode d'emploi :
     //
     // Contrat :
@@ -50,7 +63,7 @@ public:
     // Contrat :
     //
 
-    Query ( );
+    Query(string dataIn, string localURL);
     // Mode d'emploi :
     //
     // Contrat :
@@ -68,7 +81,18 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-
+    string LocalURL;
+    string IPClient;
+    string UserLogName;
+    string AuthenticatedUser;
+    Date_t DateOfQuery;
+    string ActionType;
+    string RequestURL;
+    string Protocol;
+    int ReturnCode;
+    int DataSent;
+    string RefererURL;
+    string BrowserClient;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Query>

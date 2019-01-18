@@ -12,6 +12,9 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -22,11 +25,17 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Query::Méthode ( liste des paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
+vector<string> Query::Split(string strToSplit, char delimiter)
+{
+    stringstream ss(strToSplit);
+    string item;
+    vector<string> splittedString;
+    while(getline(ss, item, delimiter))
+    {
+        splittedString.push_back(item);
+    }
+    return splittedString;
+}
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -48,9 +57,8 @@ Query::Query ( const Query & unQuery )
 } //----- Fin de Query (constructeur de copie)
 
 
-Query::Query ( )
-// Algorithme :
-//
+Query::Query(string dataIn, string localURL)
+: LocalURL(localURL)
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Query>" << endl;

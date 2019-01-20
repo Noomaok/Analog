@@ -62,6 +62,11 @@ ostream& operator<<(ostream& os, const Query& q)
     return os;
 }
 
+bool operator<(const Query& q1, const Query& q2)
+{
+    return (q1.IPClient < q2.IPClient);
+}
+
 //-------------------------------------------- Constructeurs - destructeur
 Query::Query ( const Query & unQuery )
 // Algorithme :

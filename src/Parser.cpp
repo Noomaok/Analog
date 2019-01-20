@@ -64,7 +64,6 @@ Parser::Parser (const string fileName)
         queryList.insert(query);
     }
 
-
 #ifdef MAP
     cout << "Appel au constructeur de <Parser>" << endl;
 #endif

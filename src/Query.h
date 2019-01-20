@@ -51,6 +51,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
+    friend bool operator<(const Query& q1, const Query& q2);
     friend ostream& operator<<(ostream& os, const Query& q);
     // Mode d'emploi :
     //

@@ -16,6 +16,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Analog.h"
+#include "Parser.h"
+
 
 //------------------------------------------------------------- Constantes
 
@@ -30,7 +32,7 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-    
+    Parser p("tmp/court.log");
 }
 
 

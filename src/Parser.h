@@ -11,6 +11,9 @@
 #define PARSER_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include <set>
+
+#include "Query.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -68,7 +71,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-
+    set<Query> queryList;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Parser>

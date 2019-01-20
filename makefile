@@ -14,6 +14,8 @@ all:
 debug:
 	$(ECHO) "Build debug version of <$(EXE)>"
 	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
+	$(ECHO) "Running <$(EXE)>"
+	@ ./bin/analog
 
 release:
 	$(ECHO) "Build release version of <$(EXE)>"

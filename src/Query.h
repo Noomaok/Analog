@@ -42,6 +42,7 @@ class Query
 public:
 //----------------------------------------------------- Méthodes publiques
     vector<string> Split(string strToSplit, char delimiter);
+    void RemoveEmptyStrings(vector<string>& strings);
     // Mode d'emploi :
     //
     // Contrat :
@@ -81,7 +82,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-    string LocalURL;
+
     string IPClient;
     string UserLogName;
     string AuthenticatedUser;
@@ -92,6 +93,7 @@ protected:
     int ReturnCode;
     int DataSent;
     string RefererURL;
+    string LocalURL;
     string BrowserClient;
 };
 

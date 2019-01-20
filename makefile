@@ -1,5 +1,5 @@
 CPP = g++ -std=c++11
-CPPFLAGS = -g -Wall -Werror -pedantic -ansi
+CPPFLAGS = -g -Wall -Werror -pedantic -ansi -DMAP
 EXE = bin/analog
 INT = $(wildcard src/*.h)
 REAL = $(INT:.h=.cpp)

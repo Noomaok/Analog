@@ -12,6 +12,8 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -47,10 +49,20 @@ Parser::Parser ( const Parser & unParser )
 } //----- Fin de Parser (constructeur de copie)
 
 
-Parser::Parser ( )
+Parser::Parser (const string fileName)
 // Algorithme :
 //
 {
+    ifstream logFile;
+    logFile.open(fileName);
+
+    string line;
+    while (getline(logFile, line))
+    {
+        
+    }
+
+
 #ifdef MAP
     cout << "Appel au constructeur de <Parser>" << endl;
 #endif

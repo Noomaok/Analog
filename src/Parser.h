@@ -50,7 +50,7 @@ public:
     // Contrat :
     //
 
-    Parser ( );
+    Parser (string fileName);
     // Mode d'emploi :
     //
     // Contrat :

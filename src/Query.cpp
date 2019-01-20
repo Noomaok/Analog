@@ -23,8 +23,6 @@ using namespace std;
 
 //------------------------------------------------------------- Constantes
 
-#define QUERY_LENGTH 11
-
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
@@ -55,11 +53,14 @@ void Query::RemoveEmptyStrings(vector<string>& strings)
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
-//Query & Query::operator = ( const Query & unQuery )
-// Algorithme :
-//
-//----- Fin de operator =
 
+ostream& operator<<(ostream& os, const Query& q)
+{
+    //os << q.IPClient << endl;
+    os << q.RequestURL << endl;
+    os << q.RefererURL;
+    return os;
+}
 
 //-------------------------------------------- Constructeurs - destructeur
 Query::Query ( const Query & unQuery )
@@ -82,16 +83,15 @@ Query::Query(string dataIn)
     RemoveEmptyStrings(query_elements);
     RemoveEmptyStrings(query_referer_URL);
 
-
     //TODO : check if query format is adequate 
     IPClient = query_elements.at(0);
     RequestURL = query_URL.at(1);
-    //RefererURL = query_elements.at(10);
-
+    RefererURL = "/" + query_referer_URL.at(2);
     
 #ifdef MAP
     cout << "Appel au constructeur de <Query>" << endl;
 
+    /*
     for(int i=0; i<query_elements.size(); i++)
     {
         cout << "query_elements(" << i << ") : " << query_elements.at(i) << endl;
@@ -105,7 +105,7 @@ Query::Query(string dataIn)
     for(int i=0; i<query_referer_URL.size(); i++)
     {
         cout << "query_referer_URL(" << i << ") : " << query_referer_URL.at(i) << endl;
-    }
+    }*/
 
 #endif
 } //----- Fin de Query

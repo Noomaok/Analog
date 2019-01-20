@@ -12,6 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <vector>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -50,7 +51,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Query & operator = ( const Query & unQuery );
+    friend ostream& operator<<(ostream& os, const Query& q);
     // Mode d'emploi :
     //
     // Contrat :

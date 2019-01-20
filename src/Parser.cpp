@@ -59,7 +59,9 @@ Parser::Parser (const string fileName)
     string line;
     while (getline(logFile, line))
     {
-        cout << line;
+        Query query(line);
+        
+        //queryList.insert(query);
     }
 
 

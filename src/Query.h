@@ -63,7 +63,7 @@ public:
     // Contrat :
     //
 
-    Query(string dataIn, string localURL);
+    Query(string dataIn);
     // Mode d'emploi :
     //
     // Contrat :

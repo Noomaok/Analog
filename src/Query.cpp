@@ -56,9 +56,9 @@ Query::Query ( const Query & unQuery )
 } //----- Fin de Query (constructeur de copie)
 
 
-Query::Query(string dataIn, string localURL)
-: LocalURL(localURL)
+Query::Query(string dataIn)
 {
+    vector<string> elements = Split(dataIn, ' ');
 #ifdef MAP
     cout << "Appel au constructeur de <Query>" << endl;
 #endif

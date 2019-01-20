@@ -60,8 +60,14 @@ Parser::Parser (const string fileName)
     while (getline(logFile, line))
     {
         Query query(line);
-        cout << query << endl;
-        queryList.insert(query);
+        querySet.insert(query);
+    }
+
+    cout << querySet.size() << endl;
+
+    for(set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
+    {
+        cout << *it << endl;
     }
 
 #ifdef MAP

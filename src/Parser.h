@@ -71,7 +71,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-    set<Query> queryList;
+    set<Query> querySet;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Parser>

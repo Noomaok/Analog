@@ -62,16 +62,19 @@ ostream& operator<<(ostream& os, const Query& q)
     return os;
 }
 
+//opérateur de comparaison nécéssaire à l'insert du set
 bool operator<(const Query& q1, const Query& q2)
 {
     return (q1.IPClient < q2.IPClient);
 }
 
 //-------------------------------------------- Constructeurs - destructeur
-Query::Query ( const Query & unQuery )
-// Algorithme :
-//
+Query::Query (const Query & aQuery)
 {
+    IPClient = aQuery.IPClient;
+    RequestURL = aQuery.RequestURL;
+    RefererURL = aQuery.RefererURL;
+
 #ifdef MAP
     cout << "Appel au constructeur de copie de <Query>" << endl;
 #endif

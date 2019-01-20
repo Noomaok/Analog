@@ -60,7 +60,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Query ( const Query & unQuery );
+    Query ( const Query & aQuery );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :

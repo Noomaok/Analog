@@ -44,9 +44,6 @@ class Query
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    vector<string> Split(string strToSplit, char delimiter);
-    void RemoveEmptyStrings(vector<string>& strings);
-
     inline string getRequestURL() const { return RequestURL; };
     inline string getRefererURL() const { return RefererURL; };
     inline static int getNbExceptions() { return nbExceptions;};

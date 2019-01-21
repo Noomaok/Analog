@@ -20,36 +20,13 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Query.h"
+#include "Tools.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-bool isCharacter(string s)
-{
-    return s == " " || s == "";
-}
-
-vector<string> Query::Split(string strToSplit, char delimiter)
-{
-    stringstream ss(strToSplit);
-    string item;
-    vector<string> splittedString;
-
-    while(getline(ss, item, delimiter))
-    {
-        splittedString.push_back(item);
-    }
-    return splittedString;
-}
-
-void Query::RemoveEmptyStrings(vector<string>& strings)
-{
-  vector<string>::iterator it = remove_if(strings.begin(), strings.end(),isCharacter);
-  //erase the removed elements
-  strings.erase(it, strings.end());
-}
 
 //------------------------------------------------- Surcharge d'opérateurs
 

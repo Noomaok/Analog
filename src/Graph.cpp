@@ -16,6 +16,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Graph.h"
+#include "Tools.h"
 
 //------------------------------------------------------------- Constantes
 //
@@ -26,6 +27,7 @@ void Graph::createGraphFile()
 // Algorithme :
 //
 {
+
 } //----- Fin de Méthode
 
 
@@ -51,13 +53,14 @@ Graph::Graph (set<Query> querySet)
 {
     for (set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
     {
-        string mapKey = it->getRequestURL() + "<->" + it->getRefererURL();
+        string mapKey = it->getRequestURL() + '|' + it->getRefererURL();
 
         if (nodeLinks.find(mapKey) == nodeLinks.end() ) 
         {
-        // not found
+            // not found
             nodeLinks.insert(make_pair(mapKey,1));
-        } else 
+        } 
+        else 
         {
             // found
             map<string,int>::iterator found = nodeLinks.find(mapKey);

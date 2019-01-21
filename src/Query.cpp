@@ -25,7 +25,11 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
+static int nbExceptions = 0;
+
 //----------------------------------------------------- Méthodes publiques
+
+int Query::getNbExceptions(){return nbExceptions;}
 
 bool isCharacter(string s)
 {
@@ -94,12 +98,20 @@ Query::Query(string dataIn)
     //TODO : check if query format is adequate 
     IPClient = query_elements.at(0);
     RequestURL = query_URL.at(1);
-    RefererURL = "/" + query_referer_URL.at(2);
+
+    try 
+    {
+        RefererURL = "/" + query_referer_URL.at(2);
+    }
+    catch (const out_of_range& e) 
+    {
+        nbExceptions++;
+    }
+    
     
 #ifdef MAP
     cout << "Appel au constructeur de <Query>" << endl;
 
-    /*
     for(int i=0; i<query_elements.size(); i++)
     {
         cout << "query_elements(" << i << ") : " << query_elements.at(i) << endl;
@@ -113,7 +125,7 @@ Query::Query(string dataIn)
     for(int i=0; i<query_referer_URL.size(); i++)
     {
         cout << "query_referer_URL(" << i << ") : " << query_referer_URL.at(i) << endl;
-    }*/
+    }
 
 #endif
 } //----- Fin de Query

@@ -44,6 +44,7 @@ public:
 //----------------------------------------------------- Méthodes publiques
     vector<string> Split(string strToSplit, char delimiter);
     void RemoveEmptyStrings(vector<string>& strings);
+    static int getNbExceptions();
     // Mode d'emploi :
     //
     // Contrat :

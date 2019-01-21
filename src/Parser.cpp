@@ -63,12 +63,12 @@ Parser::Parser (const string fileName)
         querySet.insert(query);
     }
 
+    cout << Query::getNbExceptions() << endl;
     cout << querySet.size() << endl;
-
-    for(set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
+    /*for(set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
     {
         cout << *it << endl;
-    }
+    }*/
 
 #ifdef MAP
     cout << "Appel au constructeur de <Parser>" << endl;

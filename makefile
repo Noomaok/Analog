@@ -20,6 +20,8 @@ debug:
 release:
 	$(ECHO) "Build release version of <$(EXE)>"
 	@ $(CPP) -o $(EXE) $(REAL)
+	$(ECHO) "Running <$(EXE)>"
+	@ ./$(EXE)
 
 clean:
 	rm -f $(EXE)

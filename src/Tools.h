@@ -45,6 +45,7 @@ vector<string> Split(string strToSplit, char delimiter);
     Contrat :
         renvoie un vecteur de strings correspondant aux sous-strings
 */
+
 void RemoveEmptyStrings(vector<string>& strings);
 /* 
     Mode d'emploi :

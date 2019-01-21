@@ -34,12 +34,15 @@ class Graph
 public:
 //----------------------------------------------------- Méthodes publiques
     void createGraphFile();
+
     void printHits();
-    
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    /*
+    Contrat :
+    Affiche les N_PRINT pages les plus consultées (ou l'intégralité des hits
+    si le log en contient moins)
+    Si certaines pages ont le même nombre de hits, elles sont ordonnées par
+    ordre alphabétique décroissant
+    */
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -57,7 +60,7 @@ public:
     // Contrat :
     //
 
-    Graph (set<Query> queryList);
+    Graph (set<Query>& queryList);
     // Mode d'emploi :
     //
     // Contrat :

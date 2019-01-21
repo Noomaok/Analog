@@ -36,12 +36,6 @@ void Parser::SendDataToGraph(bool createGraph){
         graph.createGraphFile();
     }
 }
-// type Parser::Méthode ( liste des paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
-
 
 //------------------------------------------------- Surcharge d'opérateurs
 //Parser & Parser::operator = ( const Parser & unParser )
@@ -85,8 +79,6 @@ Parser::Parser (const string fileName)
 
 
 Parser::~Parser ( )
-// Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au destructeur de <Parser>" << endl;

@@ -66,7 +66,7 @@ Graph::Graph ( const Graph & unGraph )
 } //----- Fin de Graph (constructeur de copie)
 
 
-Graph::Graph (set<Query> querySet)
+Graph::Graph (set<Query>& querySet)
 {
     for (set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
     {

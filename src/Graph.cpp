@@ -48,9 +48,8 @@ Graph::Graph ( const Graph & unGraph )
 
 
 Graph::Graph (set<Query> queryList)
-// Algorithme :
-//
 {
+    
 #ifdef MAP
     cout << "Appel au constructeur de <Graph>" << endl;
 #endif

@@ -18,12 +18,18 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Parser.h"
+#include "Graph.h"
+#include "Query.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
+
+void Parser::SendDataToGraph(){
+    Graph graph(querySet);
+}
 // type Parser::Méthode ( liste des paramètres )
 // Algorithme :
 //
@@ -63,12 +69,8 @@ Parser::Parser (const string fileName)
         querySet.insert(query);
     }
 
-    cout << Query::getNbExceptions() << endl;
-    cout << querySet.size() << endl;
-    /*for(set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
-    {
-        cout << *it << endl;
-    }*/
+    cout << "Nb Exceptions : " << Query::getNbExceptions() << endl;
+    cout << "Nb Requêtes : " << querySet.size() << endl;
 
 #ifdef MAP
     cout << "Appel au constructeur de <Parser>" << endl;

@@ -79,7 +79,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
 
     map<string,int> nodeLinks;
-
+    
 };
 
 //-------------------------------- Autres définitions dépendantes de <Graph>

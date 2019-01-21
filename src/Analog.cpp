@@ -33,7 +33,7 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-    Parser p("tmp/anonyme.log");
+    Parser p("tmp/court.log");
 }
 
 

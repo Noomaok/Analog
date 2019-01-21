@@ -19,6 +19,8 @@ using namespace std;
 
 //------------------------------------------------------------- Constantes
 
+static int nbExceptions = 0;
+
 //------------------------------------------------------------------ Types
 typedef struct Date_t{
     int day;
@@ -44,7 +46,10 @@ public:
 //----------------------------------------------------- Méthodes publiques
     vector<string> Split(string strToSplit, char delimiter);
     void RemoveEmptyStrings(vector<string>& strings);
-    static int getNbExceptions();
+
+    inline string getRequestURL() const { return RequestURL; };
+    inline string getRefererURL() const { return RefererURL; };
+    inline static int getNbExceptions() { return nbExceptions;};
     // Mode d'emploi :
     //
     // Contrat :

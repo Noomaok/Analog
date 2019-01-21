@@ -49,12 +49,29 @@ Graph::Graph ( const Graph & unGraph )
 
 Graph::Graph (set<Query> querySet)
 {
-    for (auto query : querySet)
+    for (set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
     {
-        //nodeLinks.emplace(query.RequestURL, query.RefererURL);
+        string mapKey = it->getRequestURL() + "<->" + it->getRefererURL();
+
+        if (nodeLinks.find(mapKey) == nodeLinks.end() ) 
+        {
+        // not found
+            nodeLinks.insert(make_pair(mapKey,1));
+        } else 
+        {
+            // found
+            map<string,int>::iterator found = nodeLinks.find(mapKey);
+            found->second++;
+        }
     }
 #ifdef MAP
     cout << "Appel au constructeur de <Graph>" << endl;
+
+    for (map<string,int>::iterator it = nodeLinks.begin(); it != nodeLinks.end(); it++)
+    {
+        cout << " First : " << it->first << " Second : " << it->second << endl;
+    }
+
 #endif
 } //----- Fin de Graph
 

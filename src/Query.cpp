@@ -25,12 +25,7 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-static int nbExceptions = 0;
-
 //----------------------------------------------------- Méthodes publiques
-
-int Query::getNbExceptions(){return nbExceptions;}
-
 bool isCharacter(string s)
 {
     return s == " " || s == "";
@@ -60,7 +55,7 @@ void Query::RemoveEmptyStrings(vector<string>& strings)
 
 ostream& operator<<(ostream& os, const Query& q)
 {
-    //os << q.IPClient << endl;
+    os << q.IPClient << endl;
     os << q.RequestURL << endl;
     os << q.RefererURL;
     return os;
@@ -112,6 +107,7 @@ Query::Query(string dataIn)
 #ifdef MAP
     cout << "Appel au constructeur de <Query>" << endl;
 
+    /*
     for(int i=0; i<query_elements.size(); i++)
     {
         cout << "query_elements(" << i << ") : " << query_elements.at(i) << endl;
@@ -126,6 +122,7 @@ Query::Query(string dataIn)
     {
         cout << "query_referer_URL(" << i << ") : " << query_referer_URL.at(i) << endl;
     }
+    */
 
 #endif
 } //----- Fin de Query

@@ -34,6 +34,7 @@ class Graph
 public:
 //----------------------------------------------------- Méthodes publiques
     void createGraphFile();
+    void printHits();
     
     // Mode d'emploi :
     //
@@ -76,6 +77,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
 
     map<string,int> nodeLinks;
+    map<string,int> pageHits;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Graph>

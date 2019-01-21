@@ -27,8 +27,13 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Parser::SendDataToGraph(){
+void Parser::SendDataToGraph(bool createGraph){
     Graph graph(querySet);
+    graph.printHits();
+    if (createGraph)
+    {
+        graph.createGraphFile();
+    }
 }
 // type Parser::Méthode ( liste des paramètres )
 // Algorithme :

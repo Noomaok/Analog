@@ -31,7 +31,7 @@ class Parser
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void SendDataToGraph();
+    void SendDataToGraph(bool createGraph);
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
     //

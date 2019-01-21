@@ -47,9 +47,12 @@ Graph::Graph ( const Graph & unGraph )
 } //----- Fin de Graph (constructeur de copie)
 
 
-Graph::Graph (set<Query> queryList)
+Graph::Graph (set<Query> querySet)
 {
-    
+    for (auto query : querySet)
+    {
+        //nodeLinks.emplace(query.RequestURL, query.RefererURL);
+    }
 #ifdef MAP
     cout << "Appel au constructeur de <Graph>" << endl;
 #endif

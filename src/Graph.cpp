@@ -72,7 +72,7 @@ Graph::Graph (set<Query> querySet)
 
     for (map<string,int>::iterator it = nodeLinks.begin(); it != nodeLinks.end(); it++)
     {
-        cout << " First : " << it->first << " Second : " << it->second << endl;
+        cout << "First : " << it->first << " Second : " << it->second << endl;
     }
 
 #endif

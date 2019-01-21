@@ -23,10 +23,12 @@ using namespace std;
 #include "Tools.h"
 
 //------------------------------------------------------------- Constantes
-
+static int nbExceptions = 0;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
+
+int Query::getNbExceptions() { return nbExceptions; }
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -75,7 +77,7 @@ Query::Query(string dataIn)
     {
         RefererURL = "/" + query_referer_URL.at(2);
     }
-    catch (const out_of_range& e) 
+    catch (const exception& e) 
     {
         nbExceptions++;
     }

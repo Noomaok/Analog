@@ -30,6 +30,7 @@ using namespace std;
 void Parser::SendDataToGraph(bool createGraph){
     Graph graph(querySet);
     graph.printHits();
+
     if (createGraph)
     {
         graph.createGraphFile();

@@ -22,7 +22,7 @@ using namespace std;
 #include "Query.h"
 
 //------------------------------------------------------------- Constantes
-//
+#define N_PRINT 10
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
@@ -33,13 +33,14 @@ void Graph::createGraphFile()
 
 void Graph::printHits()
 {
+    //flip map to get URL sorted by hits
     multimap<int,string> flipped_pageHits = flip_map(pageHits);
-    multimap<int,string>::reverse_iterator rit;
+    multimap<int,string>::reverse_iterator r_it;
 
-    for (rit = flipped_pageHits.rbegin(); rit != flipped_pageHits.rend(); rit++)
+    //iterate through multimap until N_PRINT elements have been printed or end of multimap
+    for (r_it = flipped_pageHits.rbegin(); distance(flipped_pageHits.rbegin(),r_it) < N_PRINT && r_it != flipped_pageHits.rend(); r_it++)
     {
-
-        cout << setw(20) << left << rit->second << " (" << rit->first << " hits)" << endl;
+        cout << setw(25) << left << r_it->second << " (" << r_it->first << " hits)" << endl;
     }
 } //----- Fin de Méthode
 

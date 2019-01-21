@@ -35,7 +35,7 @@ int main(int argc, char * argv[])
 {
     bool createGraph = false;
     
-    Parser p("tmp/court.log");
+    Parser p("tmp/anonyme.log");
     p.SendDataToGraph(createGraph);
 }
 

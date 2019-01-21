@@ -12,6 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <set>
+#include <string>
 
 #include "Query.h"
 

@@ -18,9 +18,6 @@
 using namespace std;
 
 //------------------------------------------------------------- Constantes
-
-static int nbExceptions = 0;
-
 //------------------------------------------------------------------ Types
 typedef struct Date_t{
     int day;
@@ -46,7 +43,7 @@ public:
 //----------------------------------------------------- Méthodes publiques
     inline string getRequestURL() const { return RequestURL; };
     inline string getRefererURL() const { return RefererURL; };
-    inline static int getNbExceptions() { return nbExceptions;};
+    static int getNbExceptions();
     // Mode d'emploi :
     //
     // Contrat :

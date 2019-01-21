@@ -13,8 +13,9 @@
 //-------------------------------------------------------- Include système
 #include <iostream>
 #include <iomanip>
-using namespace std;
 #include <map>
+#include <set>
+using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Graph.h"

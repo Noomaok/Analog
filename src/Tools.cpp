@@ -1,11 +1,49 @@
+/*************************************************************************
+                           Tools  -  description
+                             -------------------
+    début                : $DATE$
+    copyright            : (C) $YEAR$ par $AUTHOR$
+    e-mail               : $EMAIL$
+*************************************************************************/
+
+//---------- Réalisation du module <Tools> (fichier Tools.cpp) ---------------
+
+/////////////////////////////////////////////////////////////////  INCLUDE
+//-------------------------------------------------------- Include système
+
 #include <iostream>
 #include <sstream>
 #include <vector>
 #include <string>
 #include <map>
-#include "Tools.h"
 
 using namespace std;
+//------------------------------------------------------ Include personnel
+#include "Tools.h"
+
+///////////////////////////////////////////////////////////////////  PRIVE
+//------------------------------------------------------------- Constantes
+
+//------------------------------------------------------------------ Types
+
+//---------------------------------------------------- Variables statiques
+
+//------------------------------------------------------ Fonctions privées
+//static type nom ( liste de paramètres )
+// Mode d'emploi :
+//
+// Contrat :
+//
+// Algorithme :
+//
+//{
+//} //----- fin de nom
+
+//////////////////////////////////////////////////////////////////  PUBLIC
+//---------------------------------------------------- Fonctions publiques
+//type Nom ( liste de paramètres )
+// Algorithme :
+//
 
 vector<string> Split(string strToSplit, char delimiter)
 {
@@ -43,4 +81,3 @@ multimap<int,string> flip_map(const map<string,int>& src)
     transform(src.begin(), src.end(), inserter(dst, dst.begin()), flip_pair);
     return dst;
 }
-

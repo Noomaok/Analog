@@ -41,7 +41,7 @@ ostream& operator<<(ostream& os, const Query& q)
 }
 
 //opérateur de comparaison nécéssaire à l'insert du set
-bool operator<(const Query& q1, const Query& q2)
+bool operator < (const Query& q1, const Query& q2)
 {
     return (q1.IPClient < q2.IPClient);
 }

@@ -31,11 +31,44 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
+    string fileName =  "";
+    for(int i = 1; i < argc; i++)
+    {
+        if(argv[i][0] == '-')
+        {
+            switch (argv[i][1])
+            {
+                case 'g':
+                    cout << ".dot file generate" << endl;
+                    break;
+                case 'e':
+                    cout << "exclude all document apart from html" << endl;
+                    break;
+                case 't':
+                    cout << "take only hour passed in parameter" << endl;
+                    break;
+                default:
+                    cerr << "Erreur : Pas de commande correspondante" << endl;
+                    return 1;
+                    break;
+            }
+        }
+        else
+        {
+            fileName = argv[i];
+        }
+    }
+    if(fileName == "")
+    {
+        cerr << "Erreur : Pas de fichier specifié" << endl;
+        return 1;
+    }
+
     bool createGraph = true;
 
-    Parser p("tmp/court.log");
+    Parser p(fileName);
     p.SendDataToGraph(createGraph,"tmp/graphTest");
     //system("dot -Tpng tmp/graphTest.png tmp/graphTest.dot");
 }

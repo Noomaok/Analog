@@ -16,14 +16,14 @@ debug:
 	$(ECHO) "Build debug version of <$(EXE)>"
 	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL) $(INT)
 	$(ECHO) "Running <$(EXE)>"
-	@ ./$(EXE)
+	@ ./$(EXE) tmp/court.log
 
 release:
 	@ mkdir -p bin
 	$(ECHO) "Build release version of <$(EXE)>"
 	@ $(CPP) -o $(EXE) $(REAL) $(INT)
 	$(ECHO) "Running <$(EXE)>"
-	@ ./$(EXE)
+	@ ./$(EXE) tmp/court.log
 
 clean:
 	rm -f $(EXE)

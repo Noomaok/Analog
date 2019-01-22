@@ -64,7 +64,7 @@ ostream& operator<<(ostream& os, const Query& q)
 //opérateur de comparaison nécéssaire à l'insert dans un set
 bool operator < (const Query& q1, const Query& q2)
 {
-    return (q1.IPClient < q2.IPClient 
+    return (q1.IPClient < q2.IPClient
             || q1.DateOfQuery.hour < q2.DateOfQuery.hour
             || q1.DateOfQuery.minute < q2.DateOfQuery.minute
             || q1.DateOfQuery.second < q2.DateOfQuery.second
@@ -133,6 +133,7 @@ Query::Query(string dataIn)
 
 #ifdef MAP
     cout << "Appel au constructeur de <Query>" << endl;
+    cout << *this << endl;
 #endif
 } //----- Fin de Query
 

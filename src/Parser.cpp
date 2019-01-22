@@ -61,20 +61,19 @@ Parser::Parser (const string log_fileName)
 {
     ifstream logFile;
     logFile.open(log_fileName.c_str());
-    
+
     string line;
     while (getline(logFile, line))
     {
         Query query(line);
-        cout << query << endl;
         querySet.insert(query);
     }
 
-    cout << endl << "Nb Exceptions : " << Query::getNbExceptions() << endl;
-    cout << "Nb Requêtes : " << querySet.size() << endl;
-
 #ifdef MAP
     cout << "Appel au constructeur de <Parser>" << endl;
+
+    cout << endl << "Nb Exceptions : " << Query::getNbExceptions() << endl;
+    cout << "Nb Requêtes : " << querySet.size() << endl;
 #endif
 } //----- Fin de Parser
 

@@ -14,14 +14,14 @@ all:
 debug:
 	@ mkdir -p bin
 	$(ECHO) "Build debug version of <$(EXE)>"
-	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL) $(INT)
+	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
 	$(ECHO) "Running <$(EXE)>"
 	@ ./$(EXE) tmp/court.log
 
 release:
 	@ mkdir -p bin
 	$(ECHO) "Build release version of <$(EXE)>"
-	@ $(CPP) -o $(EXE) $(REAL) $(INT)
+	@ $(CPP) -o $(EXE) $(REAL)
 	$(ECHO) "Running <$(EXE)>"
 	@ ./$(EXE) tmp/court.log
 

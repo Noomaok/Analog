@@ -41,16 +41,16 @@ bool nextArgCorrect(int index, int size, char** args, string contain)
             string s = args[index+1];
             if(s.find(contain) != string::npos)
                 return true;
-        }   
+        }
     }
     return false;
 }
 
 int main(int argc, char* argv[])
 {
-    string fileName =  "";
+    string log_fileName =  "";
+    string graph_fileName = "";
     bool createGraph = false;
-    string graphOut = "";
 
     for(int i = 1; i < argc; i++)
     {
@@ -62,8 +62,8 @@ int main(int argc, char* argv[])
                     createGraph = true;
                     if(nextArgCorrect(i, argc, argv, ".dot"))
                     {
-                        graphOut = argv[++i];
-                        cout << "Dot-file " << graphOut << " generated" << endl;
+                        graph_fileName = argv[++i];
+                        cout << "Dot-file " << graph_fileName << " generated" << endl;
                     }
                     else
                     {
@@ -72,31 +72,30 @@ int main(int argc, char* argv[])
                     }
                     break;
                 case 'e':
-                    cout << "exclude all document apart from html" << endl;
+                    cout << "Exclude all URL other than html" << endl;
                     break;
                 case 't':
-                    cout << "take only hour passed in parameter" << endl;
+                    cout << "Only hits between xh and x+1h have been taken into account" << endl;
                     break;
                 default:
-                    cerr << "Error : Commande incorrect" << endl;
+                    cerr << "Error : Commande incorrecte" << endl;
                     return 1;
                     break;
             }
         }
         else
         {
-            fileName = argv[i];
+            log_fileName = argv[i];
         }
     }
-    if(fileName == "")
+    if(log_fileName == "")
     {
         cerr << "Error : Missing file to analyse" << endl;
         return 1;
     }
 
-    Parser p(fileName);
-    p.SendDataToGraph(createGraph,graphOut);
-    //system("dot -Tpng tmp/graphTest.png tmp/graphTest.dot");
+    Parser p(log_fileName);
+    p.SendDataToGraph(createGraph,"tmp/" + graph_fileName);
 }
 
 //------------------------------------------------- Surcharge d'opérateurs

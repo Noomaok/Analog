@@ -33,10 +33,11 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-    bool createGraph = false;
-    
+    bool createGraph = true;
+
     Parser p("tmp/court.log");
-    p.SendDataToGraph(createGraph);
+    p.SendDataToGraph(createGraph,"tmp/graphTest");
+    //system("dot -Tpng tmp/graphTest.png tmp/graphTest.dot");
 }
 
 

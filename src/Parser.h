@@ -32,7 +32,7 @@ class Parser
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void SendDataToGraph(bool createGraph);
+    void SendDataToGraph(bool createGraph, string graph_fileName);
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
     //
@@ -55,7 +55,7 @@ public:
     // Contrat :
     //
 
-    Parser (string fileName);
+    Parser (string log_fileName);
     // Mode d'emploi :
     //
     // Contrat :

@@ -33,7 +33,7 @@ class Graph
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void createGraphFile();
+    void createGraphFile(string graph_fileName);
 
     void printHits();
     /*

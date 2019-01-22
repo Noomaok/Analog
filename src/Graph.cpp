@@ -12,6 +12,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <fstream>
 #include <iomanip>
 #include <map>
 #include <set>
@@ -27,9 +28,14 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void Graph::createGraphFile()
+void Graph::createGraphFile(string graph_fileName)
 {
+    ofstream graphFile;
+    graphFile.open(graph_fileName);
 
+    graphFile << "digraph{" << endl;
+    graphFile << "A->B" << endl;
+    graphFile << "}";
 } //----- Fin de Méthode
 
 void Graph::printHits()
@@ -72,12 +78,12 @@ Graph::Graph (set<Query>& querySet)
     {
         //fill nodeLinks map with concatenated URL and hits counter
         string concatenated_URL = it->getRequestURL() + '|' + it->getRefererURL();
-        if (nodeLinks.find(concatenated_URL) == nodeLinks.end() ) 
+        if (nodeLinks.find(concatenated_URL) == nodeLinks.end() )
         {
             // not found
             nodeLinks.insert(make_pair(concatenated_URL,1));
-        } 
-        else 
+        }
+        else
         {
             // found
             map<string,int>::iterator found = nodeLinks.find(concatenated_URL);
@@ -85,12 +91,12 @@ Graph::Graph (set<Query>& querySet)
         }
 
         //fill pageHits map with concatenated URL and hits counter
-        if (pageHits.find(it->getRequestURL()) == pageHits.end()) 
+        if (pageHits.find(it->getRequestURL()) == pageHits.end())
         {
             // not found
             pageHits.insert(make_pair(it->getRequestURL(),1));
-        } 
-        else 
+        }
+        else
         {
             // found
             map<string,int>::iterator found = pageHits.find(it->getRequestURL());

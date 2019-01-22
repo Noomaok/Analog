@@ -27,13 +27,13 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Parser::SendDataToGraph(bool createGraph){
+void Parser::SendDataToGraph(bool createGraph, string graph_fileName = ""){
     Graph graph(querySet);
     graph.printHits();
 
     if (createGraph)
     {
-        graph.createGraphFile();
+        graph.createGraphFile(graph_fileName + ".dot");
     }
 }
 
@@ -55,12 +55,12 @@ Parser::Parser ( const Parser & unParser )
 } //----- Fin de Parser (constructeur de copie)
 
 
-Parser::Parser (const string fileName)
+Parser::Parser (const string log_fileName)
 // Algorithme :
 //
 {
     ifstream logFile;
-    logFile.open(fileName);
+    logFile.open(log_fileName);
 
     string line;
     while (getline(logFile, line))

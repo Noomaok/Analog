@@ -44,6 +44,7 @@ public:
     inline string getRequestURL() const { return RequestURL; };
     inline string getRefererURL() const { return RefererURL; };
     static int getNbExceptions();
+    void makeDate(string strToConvert);
     // Mode d'emploi :
     //
     // Contrat :
@@ -85,6 +86,7 @@ protected:
 
 //----------------------------------------------------- Attributs protégés
 
+    //Data from query line
     string IPClient;
     string UserLogName;
     string AuthenticatedUser;
@@ -95,8 +97,10 @@ protected:
     int ReturnCode;
     int DataSent;
     string RefererURL;
-    string LocalURL;
     string BrowserClient;
+
+    //Name of local website
+    string LocalURL;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Query>

@@ -15,6 +15,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <algorithm> //for remove_if
 #include <map>
 
 using namespace std;

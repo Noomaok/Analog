@@ -1,5 +1,5 @@
 CPP = g++ -std=c++11
-CPPFLAGS = -g -Wall -Werror -pedantic -ansi -DMAP
+CPPFLAGS = -g -Wall -Werror -pedantic -ansi #-DMAP
 EXE = bin/analog
 INT = $(wildcard src/*.h)
 REAL = $(INT:.h=.cpp)
@@ -12,16 +12,18 @@ all:
 	$(ECHO) "- clean   : Delete all generated files"
 
 debug:
+	@ mkdir -p bin
 	$(ECHO) "Build debug version of <$(EXE)>"
-	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
+	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL) $(INT)
 	$(ECHO) "Running <$(EXE)>"
-	@ ./$(EXE)
+	@ ./$(EXE) tmp/court.log
 
 release:
+	@ mkdir -p bin
 	$(ECHO) "Build release version of <$(EXE)>"
-	@ $(CPP) -o $(EXE) $(REAL)
+	@ $(CPP) -o $(EXE) $(REAL) $(INT)
 	$(ECHO) "Running <$(EXE)>"
-	@ ./$(EXE)
+	@ ./$(EXE) tmp/court.log
 
 clean:
 	rm -f $(EXE)

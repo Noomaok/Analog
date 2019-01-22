@@ -31,7 +31,7 @@ using namespace std;
 void Graph::createGraphFile(string graph_fileName)
 {
     ofstream graphFile;
-    graphFile.open(graph_fileName);
+    graphFile.open(graph_fileName.c_str());
 
     graphFile << "digraph{" << endl;
 

@@ -34,7 +34,7 @@ void Graph::createGraphFile(string graph_fileName)
     graphFile.open(graph_fileName);
 
     graphFile << "digraph{" << endl;
-    graphFile << "A->B" << endl;
+
     graphFile << "}";
 } //----- Fin de Méthode
 

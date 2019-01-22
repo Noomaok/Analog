@@ -33,7 +33,7 @@ void Parser::SendDataToGraph(bool createGraph, string graph_fileName = ""){
 
     if (createGraph)
     {
-        graph.createGraphFile(graph_fileName + ".dot");
+        graph.createGraphFile(graph_fileName);
     }
 }
 

@@ -12,6 +12,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <string>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -31,9 +32,26 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
+bool nextArgCorrect(int index, int size, char** args, string contain)
+{
+    if(index+1 < size)
+    {
+        if(args[index+1][0] != '-')
+        {
+            string s = args[index+1];
+            if(s.find(contain) != string::npos)
+                return true;
+        }   
+    }
+    return false;
+}
+
 int main(int argc, char* argv[])
 {
     string fileName =  "";
+    bool createGraph = false;
+    string graphOut = "";
+
     for(int i = 1; i < argc; i++)
     {
         if(argv[i][0] == '-')
@@ -41,7 +59,17 @@ int main(int argc, char* argv[])
             switch (argv[i][1])
             {
                 case 'g':
-                    cout << ".dot file generate" << endl;
+                    createGraph = true;
+                    if(nextArgCorrect(i, argc, argv, ".dot"))
+                    {
+                        graphOut = argv[++i];
+                        cout << "Dot-file " << graphOut << " generated" << endl;
+                    }
+                    else
+                    {
+                        cerr << "Error : Specify a correct name for the Dot-file" << endl;
+                        return 1;
+                    }
                     break;
                 case 'e':
                     cout << "exclude all document apart from html" << endl;
@@ -50,7 +78,7 @@ int main(int argc, char* argv[])
                     cout << "take only hour passed in parameter" << endl;
                     break;
                 default:
-                    cerr << "Erreur : Pas de commande correspondante" << endl;
+                    cerr << "Error : Commande incorrect" << endl;
                     return 1;
                     break;
             }
@@ -62,17 +90,14 @@ int main(int argc, char* argv[])
     }
     if(fileName == "")
     {
-        cerr << "Erreur : Pas de fichier specifié" << endl;
+        cerr << "Error : Missing file to analyse" << endl;
         return 1;
     }
 
-    bool createGraph = true;
-
     Parser p(fileName);
-    p.SendDataToGraph(createGraph,"tmp/graphTest");
+    p.SendDataToGraph(createGraph,graphOut);
     //system("dot -Tpng tmp/graphTest.png tmp/graphTest.dot");
 }
-
 
 //------------------------------------------------- Surcharge d'opérateurs
 //Analog & Analog::operator = ( const Analog & unAnalog )

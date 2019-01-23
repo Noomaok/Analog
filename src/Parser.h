@@ -39,6 +39,7 @@ public:
     // Contrat :
     //
 
+    void filterURLs(string contain);
 
 //------------------------------------------------- Surcharge d'opérateurs
     Parser & operator = ( const Parser & unParser );

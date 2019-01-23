@@ -27,7 +27,8 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Parser::SendDataToGraph(bool createGraph, string graph_fileName = ""){
+void Parser::SendDataToGraph(bool createGraph, string graph_fileName = "")
+{
     Graph graph(querySet);
     graph.printHits();
 
@@ -35,6 +36,26 @@ void Parser::SendDataToGraph(bool createGraph, string graph_fileName = ""){
     {
         graph.createGraphFile(graph_fileName);
     }
+}
+
+void Parser::filterURLs(string contain)
+{
+    //cout << querySet.size() << endl;
+
+    set<Query>::iterator it = querySet.begin();
+    while(it != querySet.end())
+    {
+        if(it->getRequestURL().find(contain) == string::npos)
+        {
+            querySet.erase(it++);
+        }
+        else
+        {
+            ++it;
+        }
+    }
+
+    //cout << querySet.size() << endl;
 }
 
 //------------------------------------------------- Surcharge d'opérateurs

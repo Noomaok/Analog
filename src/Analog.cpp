@@ -12,6 +12,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 using namespace std;
 
@@ -51,6 +52,7 @@ int main(int argc, char* argv[])
     string log_fileName =  "";
     string graph_fileName = "";
     bool createGraph = false;
+    bool getOnlyHTML = false;
 
     for(int i = 1; i < argc; i++)
     {
@@ -71,6 +73,7 @@ int main(int argc, char* argv[])
                     }
                     break;
                 case 'e':
+                    getOnlyHTML = true;
                     cout << "Exclude all URL other than html" << endl;
                     break;
                 case 't':
@@ -94,6 +97,12 @@ int main(int argc, char* argv[])
     }
 
     Parser p(log_fileName);
+
+    if(getOnlyHTML)
+    {
+        p.filterURLs(".html"); //idee on peut donner le choix du filtre a l'utilisateur et par defaut il prend que les .html
+    }
+
     p.SendDataToGraph(createGraph, graph_fileName); //où mettre le graph ? nouveau dossier ?
     if(createGraph)
     {

@@ -81,7 +81,6 @@ protected:
 
     map<string,int> nodeLinks;
     map<string,int> pageHits;
-    map<int,string> graphNodes;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Graph>

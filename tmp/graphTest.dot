@@ -1,2 +1,7 @@
 digraph{
+"/page1.html" -> "/page2.html" [label="2"]
+"/page2.html" -> "/page3.html" [label="1"]
+"/page3.html" -> "/page2.html" [label="1"]
+"/page2.html" -> "/page1.html" [label="1"]
+"/page3.html" -> "/image.jpg" [label="1"]
 }

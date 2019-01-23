@@ -26,42 +26,32 @@ using namespace std;
 
 //------------------------------------------------------------- Constantes
 #define N_PRINT 10
+#define N_GRAPH 10
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
 void Graph::createGraphFile(string graph_fileName)
 {
+    //flip map to get graph arcs sorted by hits
+    multimap<int,string> flipped_nodeLinks = flip_map(nodeLinks);
+    multimap<int,string>::reverse_iterator r_it;
+
     ofstream graphFile;
     graphFile.open(graph_fileName.c_str());
 
     graphFile << "digraph{" << endl;
 
-    //remplissage de graphNodes
-    /*int compteur = 0;
-    for (map<string,int>::iterator it = pageHits.begin(); it != pageHits.end(); it++)
+    //iterate through multimap until N_GRAPH elements have been added to the graph (or end of multimap)
+    for (r_it = flipped_nodeLinks.rbegin(); distance(flipped_nodeLinks.rbegin(),r_it) < N_GRAPH && r_it != flipped_nodeLinks.rend(); r_it++)
     {
-        graphNodes.insert(make_pair(compteur++,it->first));
+        vector<string> nodes = Split(r_it->second,'|');
+
+        graphFile << "\"" << nodes.back() << "\" -> \"" << nodes.front() << "\"";
+        graphFile << " [label=\"" << r_it->first << "\"]" << endl;
     }
 
-    //écriture des noeuds du graphe
-    for (map<int,string>::iterator it = graphNodes.begin(); it != graphNodes.end(); it++)
-    {
-        graphFile << it->first << " [label=\"" << it->second << "\"]" << endl;
-    }
-
-    for (map<string,int>::iterator it = nodeLinks.begin(); it != nodeLinks.end(); it++)
-    {
-        vector<string> nodes = Split(it->first,'|');
-
-        map<int,string>::iterator found = graphNodes.find(compteur);
-        map<string,int>::iterator found2 = nodeLinks.find(found->second);
-
-
-        graphFile << nodes.back() << " -> " << nodes.front();
-        graphFile << " [label=\"" << found2->second << "\"]" << endl;
-    }
-    */
     graphFile << "}";
+
 } //----- Fin de Méthode
 
 void Graph::printHits()
@@ -70,7 +60,7 @@ void Graph::printHits()
     multimap<int,string> flipped_pageHits = flip_map(pageHits);
     multimap<int,string>::reverse_iterator r_it;
 
-    //iterate through multimap until N_PRINT elements have been printed or end of multimap
+    //iterate through multimap until N_PRINT elements have been printed (or end of multimap)
     for (r_it = flipped_pageHits.rbegin(); distance(flipped_pageHits.rbegin(),r_it) < N_PRINT && r_it != flipped_pageHits.rend(); r_it++)
     {
         cout << setw(25) << left << r_it->second << " (" << r_it->first << " hits)" << endl;

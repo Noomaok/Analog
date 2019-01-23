@@ -33,14 +33,14 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-bool nextArgCorrect(int index, int size, char** args, string contain)
+bool nextArgCorrect(int index, int size, char** args, string extension)
 {
     if(index+1 < size)
     {
         if(args[index+1][0] != '-')
         {
             string s = args[index+1];
-            if(s.find(contain) != string::npos)
+            if(s.find(extension) != string::npos)
                 return true;
         }
     }
@@ -101,9 +101,11 @@ int main(int argc, char* argv[])
     if(getOnlyHTML)
     {
         p.filterURLs(".html"); //idee on peut donner le choix du filtre a l'utilisateur et par defaut il prend que les .html
+        //carrément !
     }
 
     p.SendDataToGraph(createGraph, graph_fileName); //où mettre le graph ? nouveau dossier ?
+
     if(createGraph)
     {
         system("dot -Tpng -o tmp/graphTest.png tmp/graphTest.dot"); //à paramétrer

@@ -38,14 +38,14 @@ void Parser::SendDataToGraph(bool createGraph, string graph_fileName = "")
     }
 }
 
-void Parser::filterURLs(string contain)
+void Parser::filterURLs(string extension)
 {
     //cout << querySet.size() << endl;
 
     set<Query>::iterator it = querySet.begin();
     while(it != querySet.end())
     {
-        if(it->getRequestURL().find(contain) == string::npos)
+        if(it->getRequestURL().find(extension) == string::npos)
         {
             querySet.erase(it++);
         }

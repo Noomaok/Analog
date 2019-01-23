@@ -16,7 +16,7 @@ debug:
 	$(ECHO) "Build debug version of <$(EXE)>"
 	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
 	$(ECHO) "Running <$(EXE)>"
-	@ ./$(EXE) -g tmp/graphTest.dot tmp/court.log
+	@ ./$(EXE) -e -g tmp/graphTest.dot tmp/court.log
 
 release:
 	@ mkdir -p bin

@@ -14,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <vector>
 #include <map>
 #include <set>
 using namespace std;
@@ -35,6 +36,31 @@ void Graph::createGraphFile(string graph_fileName)
 
     graphFile << "digraph{" << endl;
 
+    //remplissage de graphNodes
+    /*int compteur = 0;
+    for (map<string,int>::iterator it = pageHits.begin(); it != pageHits.end(); it++)
+    {
+        graphNodes.insert(make_pair(compteur++,it->first));
+    }
+
+    //écriture des noeuds du graphe
+    for (map<int,string>::iterator it = graphNodes.begin(); it != graphNodes.end(); it++)
+    {
+        graphFile << it->first << " [label=\"" << it->second << "\"]" << endl;
+    }
+
+    for (map<string,int>::iterator it = nodeLinks.begin(); it != nodeLinks.end(); it++)
+    {
+        vector<string> nodes = Split(it->first,'|');
+
+        map<int,string>::iterator found = graphNodes.find(compteur);
+        map<string,int>::iterator found2 = nodeLinks.find(found->second);
+
+
+        graphFile << nodes.back() << " -> " << nodes.front();
+        graphFile << " [label=\"" << found2->second << "\"]" << endl;
+    }
+    */
     graphFile << "}";
 } //----- Fin de Méthode
 

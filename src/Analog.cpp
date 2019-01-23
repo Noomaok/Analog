@@ -63,7 +63,6 @@ int main(int argc, char* argv[])
                     if(nextArgCorrect(i, argc, argv, ".dot"))
                     {
                         graph_fileName = argv[++i];
-                        cout << "Dot-file " << graph_fileName << " generated" << endl;
                     }
                     else
                     {
@@ -95,7 +94,12 @@ int main(int argc, char* argv[])
     }
 
     Parser p(log_fileName);
-    p.SendDataToGraph(createGraph,"tmp/" + graph_fileName);
+    p.SendDataToGraph(createGraph, graph_fileName); //où mettre le graph ? nouveau dossier ?
+    if(createGraph)
+    {
+        system("dot -Tpng -o tmp/graphTest.png tmp/graphTest.dot"); //à paramétrer
+        cout << "Dot-file " << graph_fileName << " generated" << endl;
+    }
 }
 
 //------------------------------------------------- Surcharge d'opérateurs

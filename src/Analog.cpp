@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
                 case 't':
                     cout << "Only hits between xh and x+1h have been taken into account" << endl;
                     break;
-                case 'h':
+                case 'u':
                     if(nextArgCorrect(i, argc, argv, ""))
                     {
                         query_hosturl = argv[++i];

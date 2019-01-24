@@ -36,12 +36,10 @@ void Parser::SendDataToGraph(bool createGraph, string graph_fileName = "")
     {
         graph.createGraphFile(graph_fileName);
     }
-}
+}//---------Fin de SendDataToGraph
 
 void Parser::filterURLs(string extension)
 {
-    //cout << querySet.size() << endl;
-
     set<Query>::iterator it = querySet.begin();
     while(it != querySet.end())
     {
@@ -54,16 +52,9 @@ void Parser::filterURLs(string extension)
             ++it;
         }
     }
-
-    //cout << querySet.size() << endl;
-}
+}//--------Fin de filterURLs
 
 //------------------------------------------------- Surcharge d'opérateurs
-//Parser & Parser::operator = ( const Parser & unParser )
-// Algorithme :
-//
-//----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Parser::Parser ( const Parser & unParser )

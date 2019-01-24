@@ -68,13 +68,7 @@ void Graph::printHits()
 } //----- Fin de Méthode
 
 
-
-
 //------------------------------------------------- Surcharge d'opérateurs
-//Graph & Graph::operator = ( const Graph & unGraph )
-// Algorithme :
-//
-//----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur

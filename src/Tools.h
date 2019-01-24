@@ -46,14 +46,6 @@ vector<string> Split(string strToSplit, char delimiter);
         renvoie un vecteur de strings correspondant aux sous-strings
 */
 
-void RemoveEmptyStrings(vector<string>& strings);
-/* 
-    Mode d'emploi :
-        strings -> vecteur de strings à épurer
-    Contrat :
-        renvoie un vecteur correspondant au vecteur initial moins les
-        éléments supprimés (string vide et blanc souligné)
-*/
 pair<int,string> flip_pair(const pair<string,int> &p);
 multimap<int,string> flip_map(const map<string,int>& src);
 

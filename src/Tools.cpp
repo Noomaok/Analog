@@ -59,17 +59,6 @@ vector<string> Split(string strToSplit, char delimiter)
     return splittedString;
 }
 
-bool isCharacter(string s){
-    return s == "" || s == " ";
-}
-
-void RemoveEmptyStrings(vector<string>& strings)
-{
-  vector<string>::iterator it = remove_if(strings.begin(), strings.end(),isCharacter);
-  //erase the removed elements
-  strings.erase(it, strings.end());
-}
-
 //flip map(key,value) into multimap(value,key)
 pair<int,string> flip_pair(const pair<string,int> &p)
 {

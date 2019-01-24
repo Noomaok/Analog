@@ -45,7 +45,7 @@ void Query::makeDate(string strToConvert)
     DateOfQuery.minute = atoi(date_hour.at(2).c_str());
     DateOfQuery.second = atoi(date_hour.back().c_str());
     DateOfQuery.offset = atoi(date_mainelement.back().c_str());
-}
+}//--------Fin de makeDate
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -59,7 +59,7 @@ ostream& operator<<(ostream& os, const Query& q)
     os << q.RefererURL <<endl;
     os << q.BrowserClient << setfill(' ');
     return os;
-}
+}//--------Fin de la surchage de l'operateur <<
 
 //opérateur de comparaison nécéssaire à l'insert dans un set
 bool operator < (const Query& q1, const Query& q2)
@@ -71,7 +71,7 @@ bool operator < (const Query& q1, const Query& q2)
             || q1.DateOfQuery.day < q2.DateOfQuery.day
             || q1.DateOfQuery.mounth < q2.DateOfQuery.mounth
             || q1.DateOfQuery.year < q2.DateOfQuery.year);
-}
+}//--------Fin de la surchage de l'operateur <
 
 //-------------------------------------------- Constructeurs - destructeur
 Query::Query (const Query & aQuery)

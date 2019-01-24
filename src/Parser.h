@@ -56,7 +56,7 @@ public:
     // Contrat :
     //
 
-    Parser (string log_fileName);
+    Parser (const string log_fileName, const string host_url);
     // Mode d'emploi :
     //
     // Contrat :

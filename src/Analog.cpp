@@ -52,6 +52,7 @@ int main(int argc, char* argv[])
     string log_fileName =  "";
     string graph_fileName = "";
     string parser_urlFilter = ".html";
+    string query_hosturl = "http://intranet-if.insa-lyon.fr";
     bool createGraph = false;
     bool getOnlyHTML = false;
 
@@ -84,6 +85,18 @@ int main(int argc, char* argv[])
                 case 't':
                     cout << "Only hits between xh and x+1h have been taken into account" << endl;
                     break;
+                case 'h':
+                    if(nextArgCorrect(i, argc, argv, ""))
+                    {
+                        query_hosturl = argv[++i];
+                        cout << "Analyse for the host : " << endl;
+                    }
+                    else
+                    {
+                        cerr << "Error : No host name specified !" << endl;
+                        return 1;
+                    } 
+                    break;
                 default:
                     cerr << "Error : Commande incorrecte" << endl;
                     return 1;
@@ -101,7 +114,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    Parser p(log_fileName);
+    Parser p(log_fileName,query_hosturl);
 
     if(getOnlyHTML)
         p.filterURLs(parser_urlFilter);

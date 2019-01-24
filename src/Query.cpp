@@ -86,10 +86,10 @@ Query::Query (const Query & aQuery)
 } //----- Fin de Query (constructeur de copie)
 
 
-Query::Query(string dataIn)
+Query::Query(const string dataIn, const string host_url)
 {
     //TODO : make it a changeable parameter
-    LocalURL = "http://intranet-if.insa-lyon.fr";
+    HostURL = host_url;
 
     //Make all the split needed
     vector<string> query_elements = Split(dataIn, '"');
@@ -112,7 +112,7 @@ Query::Query(string dataIn)
     DataSent = atoi(query_codebyte.back().c_str());
 
     //Special handle for RefererURL variable
-    if(completeRefUrl.find(LocalURL) == string::npos)
+    if(completeRefUrl.find(HostURL) == string::npos)
     {
         if(completeRefUrl.find("http") == string::npos)
         {
@@ -126,7 +126,7 @@ Query::Query(string dataIn)
     }
     else
     {
-        RefererURL = completeRefUrl.substr(LocalURL.length(),completeRefUrl.length());
+        RefererURL = completeRefUrl.substr(HostURL.length(),completeRefUrl.length());
     }
 
     BrowserClient = query_elements.back();

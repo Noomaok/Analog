@@ -67,7 +67,7 @@ public:
     // Contrat :
     //
 
-    Query(string dataIn);
+    Query(const string dataIn, const string host_url);
     // Mode d'emploi :
     //
     // Contrat :
@@ -100,7 +100,7 @@ protected:
     string BrowserClient;
 
     //Name of local website
-    string LocalURL;
+    string HostURL;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Query>

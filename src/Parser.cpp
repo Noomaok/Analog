@@ -67,7 +67,7 @@ Parser::Parser ( const Parser & unParser )
 } //----- Fin de Parser (constructeur de copie)
 
 
-Parser::Parser (const string log_fileName)
+Parser::Parser (const string log_fileName, const string host_url)
 // Algorithme :
 //
 {
@@ -77,7 +77,7 @@ Parser::Parser (const string log_fileName)
     string line;
     while (getline(logFile, line))
     {
-        Query query(line);
+        Query query(line, host_url);
         querySet.insert(query);
     }
 

@@ -51,6 +51,7 @@ int main(int argc, char* argv[])
 {
     string log_fileName =  "";
     string graph_fileName = "";
+    string parser_urlFilter = ".html";
     bool createGraph = false;
     bool getOnlyHTML = false;
 
@@ -74,6 +75,10 @@ int main(int argc, char* argv[])
                     break;
                 case 'e':
                     getOnlyHTML = true;
+                    if(nextArgCorrect(i, argc, argv, ""))
+                    {
+                        parser_urlFilter = argv[++i];
+                    }
                     cout << "Exclude all URL other than html" << endl;
                     break;
                 case 't':
@@ -99,10 +104,7 @@ int main(int argc, char* argv[])
     Parser p(log_fileName);
 
     if(getOnlyHTML)
-    {
-        p.filterURLs(".html"); //idee on peut donner le choix du filtre a l'utilisateur et par defaut il prend que les .html
-        //carrément !
-    }
+        p.filterURLs(parser_urlFilter);
 
     p.SendDataToGraph(createGraph, graph_fileName); //où mettre le graph ? nouveau dossier ?
 

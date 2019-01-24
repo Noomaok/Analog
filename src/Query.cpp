@@ -16,6 +16,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include <algorithm> //for atoi function on linux. If not here, i got some error when compile
 
 using namespace std;
 

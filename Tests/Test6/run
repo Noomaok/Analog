@@ -1,1 +1,1 @@
-cat fichier.txt >sortie.txt && echo "essai" >sortie2.txt
+../../bin/analog -g test.dot /tmp/anonyme.log

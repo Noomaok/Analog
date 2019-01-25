@@ -54,11 +54,6 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Graph ( const Graph & unGraph );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
 
     Graph (set<Query>& queryList);
     // Mode d'emploi :

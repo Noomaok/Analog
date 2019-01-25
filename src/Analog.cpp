@@ -90,7 +90,6 @@ int main(int argc, char* argv[])
                         if(nextArgCorrect(i, argc, argv))
                         {
                             graph_fileName = string(argv[++i]) + ".dot";
-                            cout << graph_fileName << endl;
                         }
                         else
                         {

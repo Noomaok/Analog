@@ -1,7 +1,7 @@
 CPP = g++ -std=c++11
 CPPFLAGS = -g -Wall -Werror -pedantic -ansi #-DMAP
 EXE = bin/analog
-INT = $(wildcard src/*.h)
+INT = $(wildcard src/*.h) src/Analog.cpp
 REAL = $(INT:.h=.cpp)
 ECHO = @echo
 

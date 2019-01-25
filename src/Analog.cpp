@@ -65,6 +65,7 @@ int main(int argc, char* argv[])
     bool createGraph = false;
     bool doFilterURL = false;
     bool doFilterHour = false;
+    bool doFilterUndefined = false;
 
     for(int i = 1; i < argc; i++)
     {
@@ -128,7 +129,9 @@ int main(int argc, char* argv[])
 
                     displayHelp();
                     break;
-
+                case 'x':
+                    doFilterUndefined = true;
+                    cout << "Undefined referer urls are not taken into account !" << endl;
                 default:
                     cerr << "Error : Invalid command" << endl;
                     cout << "Use ./analog -h for help" << endl;
@@ -157,6 +160,11 @@ int main(int argc, char* argv[])
     if(doFilterHour)
     {
         p.filterHour(parser_hitHour);
+    }
+
+    if(doFilterUndefined)
+    {
+        p.removeUndefined();
     }
 
     p.SendDataToGraph(createGraph, graph_fileName);

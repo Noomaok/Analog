@@ -27,14 +27,14 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Parser::SendDataToGraph(bool createGraph, string graph_fileName = "")
+void Parser::SendDataToGraph(bool createGraph, string graph_fileName, unsigned int nArcs)
 {
     Graph graph(querySet);
     graph.printHits();
 
     if (createGraph)
     {
-        graph.createGraphFile(graph_fileName);
+        graph.createGraphFile(graph_fileName,nArcs);
     }
 }//---------Fin de SendDataToGraph
 

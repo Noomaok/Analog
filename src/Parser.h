@@ -32,7 +32,7 @@ class Parser
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void SendDataToGraph(bool createGraph, string graph_fileName);
+    void SendDataToGraph(bool createGraph, string graph_fileName, unsigned int nArcs = 10);
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
     //

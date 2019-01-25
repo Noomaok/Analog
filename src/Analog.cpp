@@ -53,6 +53,7 @@ void displayHelp()
     cout << "-g [dot_file_name]   : Generate a Dot-file out of the analysed log file" << endl;
     cout << "-t [hour]            : Keep all requested urls whitin the interval [hour ; hour+1], others are deleted" << endl;
     cout << "-u [host_url]        : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter" << endl;
+    cout << "-x                   : Do not display all undefined referer requests" << endl;
 }
 
 int main(int argc, char* argv[])
@@ -62,6 +63,7 @@ int main(int argc, char* argv[])
     string parser_urlFilter = ".html";
     string query_hosturl = "http://intranet-if.insa-lyon.fr";
     int parser_hitHour = 0;
+    int graph_nArcs = 10;
     bool createGraph = false;
     bool doFilterURL = false;
     bool doFilterHour = false;
@@ -92,7 +94,7 @@ int main(int argc, char* argv[])
                     {
                         parser_urlFilter = argv[++i];
                     }
-                    cout << "Exclude all URL not containing \"" << parser_urlFilter << "\"" << endl;
+                    cout << "- Exclude all URL not containing \"" << parser_urlFilter << "\"" << endl;
                     break;
 
                 case 't':
@@ -107,16 +109,17 @@ int main(int argc, char* argv[])
                         else
                         {
                             cerr << "Error : Hour must be an integer between 0 and 23" << endl;
+                            return 1;
                         }
                     }
-                    cout << "Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
+                    cout << "- Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
                     break;
 
                 case 'u':
                     if(nextArgCorrect(i, argc, argv))
                     {
                         query_hosturl = argv[++i];
-                        cout << "Analyze for the host : " << endl;
+                        cout << "- Analyze for the host : " << endl;
                     }
                     else
                     {
@@ -129,12 +132,27 @@ int main(int argc, char* argv[])
 
                     displayHelp();
                     break;
+
                 case 'x':
                     doFilterUndefined = true;
-                    cout << "Undefined referer urls are not taken into account !" << endl;
+                    cout << "- Undefined referer urls are not taken into account !" << endl;
+                    break;
+
+                case 'n':
+                    if(nextArgCorrect(i, argc, argv))
+                    {
+                        graph_nArcs = atoi(argv[++i]);
+                        if (graph_nArcs <= 0)
+                        {
+                            cerr << "Error : Number of arcs must be a positive integer" << endl;
+                            return 1;
+                        }
+                    }
+                    break;
+
                 default:
                     cerr << "Error : Invalid command" << endl;
-                    cout << "Use ./analog -h for help" << endl;
+                    cout << "- Use ./analog -h for help" << endl;
                     return 1;
                     break;
             }
@@ -167,7 +185,7 @@ int main(int argc, char* argv[])
         p.removeUndefined();
     }
 
-    p.SendDataToGraph(createGraph, graph_fileName);
+    p.SendDataToGraph(createGraph, graph_fileName, graph_nArcs);
 
     if(createGraph)
     {

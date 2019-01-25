@@ -26,11 +26,10 @@ using namespace std;
 
 //------------------------------------------------------------- Constantes
 #define N_PRINT 10
-#define N_GRAPH 500
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void Graph::createGraphFile(string graph_fileName)
+void Graph::createGraphFile(string graph_fileName, unsigned int nArcs)
 {
     //flip map to get graph arcs sorted by hits
     multimap<int,string> flipped_nodeLinks = flip_map(nodeLinks);
@@ -42,7 +41,7 @@ void Graph::createGraphFile(string graph_fileName)
     graphFile << "digraph{" << endl;
 
     //iterate through multimap until N_GRAPH elements have been added to the graph (or end of multimap)
-    for (r_it = flipped_nodeLinks.rbegin(); distance(flipped_nodeLinks.rbegin(),r_it) < N_GRAPH && r_it != flipped_nodeLinks.rend(); r_it++)
+    for (r_it = flipped_nodeLinks.rbegin(); distance(flipped_nodeLinks.rbegin(),r_it) < nArcs && r_it != flipped_nodeLinks.rend(); r_it++)
     {
         vector<string> nodes = Split(r_it->second,'|');
 

@@ -41,6 +41,7 @@ public:
 
     void filterURLs(string contain);
     void filterHour(int hour);
+    void removeUndefined();
 
 //------------------------------------------------- Surcharge d'opérateurs
     Parser & operator = ( const Parser & unParser );

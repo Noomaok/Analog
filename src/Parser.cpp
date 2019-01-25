@@ -45,12 +45,9 @@ void Parser::filterURLs(string extension)
     {
         if(it->getRequestURL().find(extension) == string::npos)
         {
-            querySet.erase(it++);
+            querySet.erase(it);
         }
-        else
-        {
-            it++;
-        }
+        ++it;
     }
 }//--------Fin de filterURLs
 
@@ -61,14 +58,24 @@ void Parser::filterHour(int hour)
     {
         if(it->getHour() != hour)
         {
-            querySet.erase(it++);
+            querySet.erase(it);
         }
-        else
-        {
-            it++;
-        }
+        ++it;
     }
 }//--------Fin de filterTime
+
+void Parser::removeUndefined()
+{
+    set<Query>::iterator it = querySet.begin();
+    while(it != querySet.end())
+    {
+        if(it->getRefererURL == "Undefined")
+        {
+            querySet.erase(it);
+        }
+        ++it;
+    }
+}
 
 //------------------------------------------------- Surcharge d'opérateurs
 

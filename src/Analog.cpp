@@ -68,6 +68,7 @@ int main(int argc, char* argv[])
     bool doFilterURL = false;
     bool doFilterHour = false;
     bool doFilterUndefined = false;
+    bool doDrawGraph = false;
 
     for(int i = 1; i < argc; i++)
     {
@@ -80,6 +81,7 @@ int main(int argc, char* argv[])
                     if(nextArgCorrect(i, argc, argv, ".dot"))
                     {
                         graph_fileName = argv[++i];
+                        cout << "- Generate Dot-file of the graph" << endl;
                     }
                     else
                     {
@@ -147,7 +149,13 @@ int main(int argc, char* argv[])
                             cerr << "Error : Number of arcs must be a positive integer" << endl;
                             return 1;
                         }
+                        cout << "- Graph will contain " << graph_nArcs << " arcs." << endl;
                     }
+                    break;
+
+                case 'd':
+                    doDrawGraph = true;
+                    cout << "- Pdf file of the graph generated" << endl;
                     break;
 
                 default:
@@ -187,10 +195,18 @@ int main(int argc, char* argv[])
 
     p.SendDataToGraph(createGraph, graph_fileName, graph_nArcs);
 
-    if(createGraph)
+    if(doDrawGraph)
     {
-        system("dot -Tpng -o tmp/graphTest.png tmp/graphTest.dot"); //à paramétrer
-        cout << "Dot-file " << graph_fileName << " generated" << endl;
+        if(createGraph)
+        {
+            string s = "dot -Tpdf -o " + graph_fileName.substr(0,graph_fileName.length()-4) + ".pdf " + graph_fileName;
+            system(s.c_str());
+            cout << "Dot-file " << graph_fileName << " converted to PDF file" << endl;
+        }
+        else
+        {
+            cerr << "Error : no Dot-file generated" << endl;
+        }
     }
 
     return 0;

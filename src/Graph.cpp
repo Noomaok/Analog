@@ -59,11 +59,13 @@ void Graph::printHits()
     multimap<int,string> flipped_pageHits = flip_map(pageHits);
     multimap<int,string>::reverse_iterator r_it;
 
+    cout << endl << "Top 10 requested urls ordered by hits :" << endl;
     //iterate through multimap until N_PRINT elements have been printed (or end of multimap)
     for (r_it = flipped_pageHits.rbegin(); distance(flipped_pageHits.rbegin(),r_it) < N_PRINT && r_it != flipped_pageHits.rend(); r_it++)
     {
         cout << setw(25) << left << r_it->second << " (" << r_it->first << " hits)" << endl;
     }
+    cout << endl;
 } //----- Fin de Méthode
 
 //-------------------------------------------- Constructeurs - destructeur

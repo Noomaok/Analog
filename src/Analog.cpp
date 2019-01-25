@@ -179,9 +179,10 @@ int main(int argc, char* argv[])
             }
         }
     }
+    
     if(log_fileName == "")
     {
-        cerr << "Error : Missing file to analyse" << endl;
+        cerr << "Error : Missing file to analyze" << endl;
         return 1;
     }
 

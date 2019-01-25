@@ -18,3 +18,4 @@ List of available options :
 
 Verify existence of file
 Add more filter for date (if time)
+Option -e multiple calls

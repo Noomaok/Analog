@@ -67,20 +67,7 @@ void Graph::printHits()
     }
 } //----- Fin de Méthode
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-
-
 //-------------------------------------------- Constructeurs - destructeur
-Graph::Graph ( const Graph & unGraph )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Graph>" << endl;
-#endif
-} //----- Fin de Graph (constructeur de copie)
-
 
 Graph::Graph (set<Query>& querySet)
 {

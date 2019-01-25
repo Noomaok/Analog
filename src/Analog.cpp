@@ -54,8 +54,8 @@ int main(int argc, char* argv[])
     string query_hosturl = "http://intranet-if.insa-lyon.fr";
     int parser_hitHour = 0;
     bool createGraph = false;
-    bool getOnlyHTML = false;
-    bool filterHour = false;
+    bool doFilterURL = false;
+    bool doFilterHour = false;
 
     for(int i = 1; i < argc; i++)
     {
@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
                     }
                     break;
                 case 'e':
-                    getOnlyHTML = true;
+                    doFilterURL = true;
                     if(nextArgCorrect(i, argc, argv))
                     {
                         parser_urlFilter = argv[++i];
@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
                         int tmp = atoi(argv[++i]);
                         if (tmp >= 0 && tmp < 24)
                         {
-                            filterHour = true;
+                            doFilterHour = true;
                             parser_hitHour = tmp;
                         }
                         else
@@ -130,12 +130,12 @@ int main(int argc, char* argv[])
 
     Parser p(log_fileName,query_hosturl);
 
-    if(getOnlyHTML)
+    if(doFilterURL)
     {
         p.filterURLs(parser_urlFilter);
     }
 
-    if(filterHour)
+    if(doFilterHour)
     {
         p.filterHour(parser_hitHour);
     }

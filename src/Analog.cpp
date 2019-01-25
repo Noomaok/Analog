@@ -84,13 +84,19 @@ int main(int argc, char* argv[])
                     if(nextArgCorrect(i, argc, argv, ".dot"))
                     {
                         graph_fileName = argv[++i];
-                        cout << "- Generate Dot-file of the graph" << endl;
                     }
                     else
                     {
-                        cerr << "Error : Specify a correct name for the Dot-file" << endl;
-                        return 1;
+                        if(nextArgCorrect(i, argc, argv))
+                        {
+                            graph_fileName = argv[++i] + ".dot";
+                        }
+                        else
+                        {
+                            graph_fileName = "out.dot";
+                        }
                     }
+                    cout << "- Generate Dot-file of the graph" << endl;
                     break;
 
                 case 'e':
@@ -114,7 +120,7 @@ int main(int argc, char* argv[])
                         else
                         {
                             cerr << "Error : Hour must be an integer between 0 and 23" << endl;
-                            return 1;
+                            return 3;
                         }
                     }
                     cout << "- Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
@@ -129,12 +135,11 @@ int main(int argc, char* argv[])
                     else
                     {
                         cerr << "Error : No host name specified !" << endl;
-                        return 1;
+                        return 4;
                     }
                     break;
 
                 case 'h':
-
                     displayHelp();
                     return 0;
 
@@ -150,21 +155,21 @@ int main(int argc, char* argv[])
                         if (graph_nArcs <= 0)
                         {
                             cerr << "Error : Number of arcs must be a positive integer" << endl;
-                            return 1;
+                            return 5;
                         }
-                        cout << "- Graph will contain " << graph_nArcs << " arcs." << endl;
+                        cout << "- Graph will contain " << graph_nArcs << " arcs" << endl;
                     }
                     break;
 
                 case 'd':
                     doDrawGraph = true;
-                    cout << "- Pdf file of the graph generated" << endl;
+                    cout << "- Generating PDF file of the graph ..." << endl;
                     break;
 
                 default:
                     cerr << "Error : Invalid command" << endl;
                     cout << "- Use ./analog -h for help" << endl;
-                    return 1;
+                    return 100;
                     break;
             }
         }
@@ -174,12 +179,12 @@ int main(int argc, char* argv[])
             ifstream file(log_fileName.c_str());
             if(!file.is_open())
             {
-                cerr << "Error : Log file not found" << endl;
-                return 1;
+                cerr << "Error : Log file " << log_fileName << " not found" << endl;
+                return 2;
             }
         }
     }
-    
+
     if(log_fileName == "")
     {
         cerr << "Error : Missing file to analyze" << endl;
@@ -216,6 +221,7 @@ int main(int argc, char* argv[])
         else
         {
             cerr << "Error : no Dot-file generated" << endl;
+            return 6;
         }
     }
 

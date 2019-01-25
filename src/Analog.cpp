@@ -49,10 +49,12 @@ bool nextArgCorrect(int index, int size, char** args, string extension = "")
 void displayHelp()
 {
     cout << "-h                   : Display this message" << endl;
+    cout << "-d                   : Generate the pdf graph" << endl;
     cout << "-e [filter]          : Keep all requested urls where the filter string is present, others are deleted. Referer urls are not affected. If no filter is given, then the default filter will be "".html\"" << endl;
-    cout << "-g [dot_file_name]   : Generate a Dot-file out of the analysed log file" << endl;
-    cout << "-t [hour]            : Keep all requested urls whitin the interval [hour ; hour+1], others are deleted" << endl;
-    cout << "-u [host_url]        : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter" << endl;
+    cout << "-g dot_file_name     : Generate a Dot-file out of the analysed log file" << endl;
+    cout << "-n nb_arcs           : Do not display all undefined referer requests" << endl;
+    cout << "-t hour              : Keep all requested urls whitin the interval [hour ; hour+1], others are deleted" << endl;
+    cout << "-u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter" << endl;
     cout << "-x                   : Do not display all undefined referer requests" << endl;
 }
 
@@ -133,7 +135,7 @@ int main(int argc, char* argv[])
                 case 'h':
 
                     displayHelp();
-                    break;
+                    return 0;
 
                 case 'x':
                     doFilterUndefined = true;

@@ -12,6 +12,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <fstream>
 #include <stdlib.h>
 #include <string>
 using namespace std;
@@ -170,6 +171,12 @@ int main(int argc, char* argv[])
         else
         {
             log_fileName = argv[i];
+            ifstream file(log_fileName.c_str());
+            if(!file.is_open())
+            {
+                cerr << "Error : Log file not found" << endl;
+                return 1;
+            }
         }
     }
     if(log_fileName == "")

@@ -46,6 +46,15 @@ bool nextArgCorrect(int index, int size, char** args, string extension = "")
     return false;
 }
 
+void displayHelp()
+{
+    cout << "-h                   : Display this message" << endl;
+    cout << "-e [filter]          : Keep all requested urls where the filter string is present, others are deleted. Referer urls are not affected. If no filter is given, then the default filter will be "".html\"" << endl;
+    cout << "-g [dot_file_name]   : Generate a Dot-file out of the analysed log file" << endl;
+    cout << "-t [hour]            : Keep all requested urls whitin the interval [hour ; hour+1], others are deleted" << endl;
+    cout << "-u [host_url]        : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter" << endl;
+}
+
 int main(int argc, char* argv[])
 {
     string log_fileName =  "";
@@ -75,14 +84,16 @@ int main(int argc, char* argv[])
                         return 1;
                     }
                     break;
+
                 case 'e':
                     doFilterURL = true;
                     if(nextArgCorrect(i, argc, argv))
                     {
                         parser_urlFilter = argv[++i];
                     }
-                    cout << "Exclude all URL other than html" << endl;
+                    cout << "Exclude all URL not containing \"" << parser_urlFilter << "\"" << endl;
                     break;
+
                 case 't':
                     if(nextArgCorrect(i, argc, argv))
                     {
@@ -94,16 +105,17 @@ int main(int argc, char* argv[])
                         }
                         else
                         {
-                            cerr << "L'heure doit être un entier compris entre 0 et 23" << endl;
+                            cerr << "Error : Hour must be an integer between 0 and 23" << endl;
                         }
                     }
                     cout << "Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
                     break;
+
                 case 'u':
                     if(nextArgCorrect(i, argc, argv))
                     {
                         query_hosturl = argv[++i];
-                        cout << "Analyse for the host : " << endl;
+                        cout << "Analyze for the host : " << endl;
                     }
                     else
                     {
@@ -111,8 +123,15 @@ int main(int argc, char* argv[])
                         return 1;
                     }
                     break;
+
+                case 'h':
+
+                    displayHelp();
+                    break;
+
                 default:
-                    cerr << "Error : Commande incorrecte" << endl;
+                    cerr << "Error : Invalid command" << endl;
+                    cout << "Use ./analog -h for help" << endl;
                     return 1;
                     break;
             }
@@ -147,4 +166,6 @@ int main(int argc, char* argv[])
         system("dot -Tpng -o tmp/graphTest.png tmp/graphTest.dot"); //à paramétrer
         cout << "Dot-file " << graph_fileName << " generated" << endl;
     }
+
+    return 0;
 }

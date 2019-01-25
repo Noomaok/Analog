@@ -15,15 +15,11 @@ debug:
 	@ mkdir -p bin
 	$(ECHO) "Build debug version of <$(EXE)>"
 	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
-	$(ECHO) "Running <$(EXE)>"
-	#@ ./$(EXE) -d -e -x -n 50 -g tmp/graphTest.dot tmp/p.log
 
 release:
 	@ mkdir -p bin
 	$(ECHO) "Build release version of <$(EXE)>"
 	@ $(CPP) -o $(EXE) $(REAL)
-	$(ECHO) "Running <$(EXE)>"
-	@ ./$(EXE) tmp/court.log
 
 clean:
 	rm -f $(EXE)

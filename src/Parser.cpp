@@ -49,10 +49,26 @@ void Parser::filterURLs(string extension)
         }
         else
         {
-            ++it;
+            it++;
         }
     }
 }//--------Fin de filterURLs
+
+void Parser::filterHour(int hour)
+{
+    set<Query>::iterator it = querySet.begin();
+    while(it != querySet.end())
+    {
+        if(it->getHour() != hour)
+        {
+            querySet.erase(it++);
+        }
+        else
+        {
+            it++;
+        }
+    }
+}//--------Fin de filterTime
 
 //------------------------------------------------- Surcharge d'opérateurs
 

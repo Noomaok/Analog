@@ -43,6 +43,7 @@ public:
 //----------------------------------------------------- Méthodes publiques
     inline string getRequestURL() const { return RequestURL; };
     inline string getRefererURL() const { return RefererURL; };
+    inline int getHour() const { return DateOfQuery.hour; };
     static int getNbExceptions();
     void makeDate(string strToConvert);
     // Mode d'emploi :

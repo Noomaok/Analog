@@ -32,7 +32,7 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-bool nextArgCorrect(int index, int size, char** args, string extension)
+bool nextArgCorrect(int index, int size, char** args, string extension = "")
 {
     if(index+1 < size)
     {
@@ -52,8 +52,10 @@ int main(int argc, char* argv[])
     string graph_fileName = "";
     string parser_urlFilter = ".html";
     string query_hosturl = "http://intranet-if.insa-lyon.fr";
+    int parser_hitHour = 0;
     bool createGraph = false;
     bool getOnlyHTML = false;
+    bool filterHour = false;
 
     for(int i = 1; i < argc; i++)
     {
@@ -75,17 +77,30 @@ int main(int argc, char* argv[])
                     break;
                 case 'e':
                     getOnlyHTML = true;
-                    if(nextArgCorrect(i, argc, argv, ""))
+                    if(nextArgCorrect(i, argc, argv))
                     {
                         parser_urlFilter = argv[++i];
                     }
                     cout << "Exclude all URL other than html" << endl;
                     break;
                 case 't':
-                    cout << "Only hits between xh and x+1h have been taken into account" << endl;
+                    if(nextArgCorrect(i, argc, argv))
+                    {
+                        int tmp = atoi(argv[++i]);
+                        if (tmp >= 0 && tmp < 24)
+                        {
+                            filterHour = true;
+                            parser_hitHour = tmp;
+                        }
+                        else
+                        {
+                            cerr << "L'heure doit être un entier compris entre 0 et 23" << endl;
+                        }
+                    }
+                    cout << "Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
                     break;
                 case 'u':
-                    if(nextArgCorrect(i, argc, argv, ""))
+                    if(nextArgCorrect(i, argc, argv))
                     {
                         query_hosturl = argv[++i];
                         cout << "Analyse for the host : " << endl;
@@ -94,7 +109,7 @@ int main(int argc, char* argv[])
                     {
                         cerr << "Error : No host name specified !" << endl;
                         return 1;
-                    } 
+                    }
                     break;
                 default:
                     cerr << "Error : Commande incorrecte" << endl;
@@ -116,9 +131,16 @@ int main(int argc, char* argv[])
     Parser p(log_fileName,query_hosturl);
 
     if(getOnlyHTML)
+    {
         p.filterURLs(parser_urlFilter);
+    }
 
-    p.SendDataToGraph(createGraph, graph_fileName); //où mettre le graph ? nouveau dossier ?
+    if(filterHour)
+    {
+        p.filterHour(parser_hitHour);
+    }
+
+    p.SendDataToGraph(createGraph, graph_fileName);
 
     if(createGraph)
     {

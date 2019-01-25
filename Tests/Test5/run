@@ -1,1 +1,1 @@
-cat 
+../../bin/analog -g fichier /tmp/anonyme.log

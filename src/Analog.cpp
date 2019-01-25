@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
                     {
                         if(nextArgCorrect(i, argc, argv))
                         {
-                            graph_fileName = argv[++i] + ".dot";
+                            graph_fileName = string(argv[++i]) + ".dot";
                         }
                         else
                         {

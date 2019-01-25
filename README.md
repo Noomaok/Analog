@@ -18,6 +18,3 @@ List of available options :
 
 Verify existence of file
 Add more filter for date (if time)
-Add -h option -> display list commande
-Add option remove undefined
-Add option number of hits

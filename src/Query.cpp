@@ -74,11 +74,20 @@ bool operator < (const Query& q1, const Query& q2)
 }//--------Fin de la surchage de l'operateur <
 
 //-------------------------------------------- Constructeurs - destructeur
-Query::Query (const Query & aQuery)
+Query::Query (const Query & q)
 {
-    IPClient = aQuery.IPClient;
-    RequestURL = aQuery.RequestURL;
-    RefererURL = aQuery.RefererURL;
+    IPClient = q.IPClient;
+    UserLogName = q.UserLogName;
+    AuthenticatedUser = q.AuthenticatedUser;
+    DateOfQuery = q.DateOfQuery;
+    ActionType = q.ActionType;
+    RequestURL = q.RequestURL;
+    Protocol = q.Protocol;
+    ReturnCode = q.ReturnCode;
+    DataSent = q.DataSent;
+    RefererURL = q.RefererURL;
+    BrowserClient = q.BrowserClient;
+    HostURL = q.HostURL;
 
 #ifdef MAP
     cout << "Appel au constructeur de copie de <Query>" << endl;

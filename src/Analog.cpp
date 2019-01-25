@@ -35,7 +35,7 @@ using namespace std;
 
 bool nextArgCorrect(int index, int size, char** args, string extension = "")
 {
-    if(index+1 < size)
+    if(index+1 < size-1)
     {
         if(args[index+1][0] != '-')
         {
@@ -90,6 +90,7 @@ int main(int argc, char* argv[])
                         if(nextArgCorrect(i, argc, argv))
                         {
                             graph_fileName = string(argv[++i]) + ".dot";
+                            cout << graph_fileName << endl;
                         }
                         else
                         {

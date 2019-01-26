@@ -60,14 +60,15 @@ vector<string> Split(string strToSplit, char delimiter)
 }
 
 //flip map(key,value) into multimap(value,key)
-pair<int,string> flip_pair(const pair<string,int> &p)
+template <typename A, typename B>
+pair<B,A> flip_pair(const pair<A,B> &p)
 {
-    return pair<int,string>(p.second, p.first);
+    return pair<B,A>(p.second, p.first);
 }
 
 multimap<int,string> flip_map(const map<string,int>& src)
 {
     multimap<int,string> dst;
-    transform(src.begin(), src.end(), inserter(dst, dst.begin()), flip_pair);
+    transform(src.begin(), src.end(), inserter(dst, dst.begin()), flip_pair<string,int>);
     return dst;
 }

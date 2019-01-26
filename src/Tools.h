@@ -38,7 +38,7 @@ using namespace std;
 //
 
 vector<string> Split(string strToSplit, char delimiter);
-/* 
+/*
     Mode d'emploi :
         strToSplit -> string à découper
         delimiter -> caractère autour duquel strToSplit sera découpé
@@ -46,9 +46,9 @@ vector<string> Split(string strToSplit, char delimiter);
         renvoie un vecteur de strings correspondant aux sous-strings
 */
 
-pair<int,string> flip_pair(const pair<string,int> &p);
+template <typename A, typename B>
+pair<B,A> flip_pair(const pair<A,B> &p);
+
 multimap<int,string> flip_map(const map<string,int>& src);
 
 #endif // TOOLS_H
-
-

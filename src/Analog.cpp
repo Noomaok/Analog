@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 
                 case 'x':
                     doFilterUndefined = true;
-                    cout << "- Undefined referer urls are not taken into account !" << endl;
+                    cout << "- Undefined referer urls are not taken into account" << endl;
                     break;
 
                 case 'n':

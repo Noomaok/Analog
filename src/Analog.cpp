@@ -21,17 +21,11 @@ using namespace std;
 #include "Parser.h"
 #include "Query.h"
 
-
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Analog::Méthode ( liste des paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
 
 bool nextArgCorrect(int index, int size, char** args, string extension = "")
 {
@@ -65,9 +59,11 @@ int main(int argc, char* argv[])
     string graph_fileName = "";
     string parser_urlFilter = ".html";
     string query_hosturl = "http://intranet-if.insa-lyon.fr";
+
     int parser_hitHour = 0;
     int graph_nArcs = 10;
-    bool createGraph = false;
+
+    bool convertGraph = false;
     bool doFilterURL = false;
     bool doFilterHour = false;
     bool doFilterUndefined = false;
@@ -80,7 +76,7 @@ int main(int argc, char* argv[])
             switch (argv[i][1])
             {
                 case 'g':
-                    createGraph = true;
+                    convertGraph = true;
                     if(nextArgCorrect(i, argc, argv, ".dot"))
                     {
                         graph_fileName = argv[++i];
@@ -208,11 +204,11 @@ int main(int argc, char* argv[])
         p.removeUndefined();
     }
 
-    p.SendDataToGraph(createGraph, graph_fileName, graph_nArcs);
+    p.SendDataToGraph(convertGraph, graph_fileName, graph_nArcs);
 
     if(doDrawGraph)
     {
-        if(createGraph)
+        if(convertGraph)
         {
             string s = "dot -Tpdf -o " + graph_fileName.substr(0,graph_fileName.length()-4) + ".pdf " + graph_fileName;
             system(s.c_str());

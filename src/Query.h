@@ -74,12 +74,6 @@ public:
     // Contrat :
     //
 
-    virtual ~Query ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
 //------------------------------------------------------------------ PRIVE
 
 protected:

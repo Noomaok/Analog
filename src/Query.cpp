@@ -97,7 +97,6 @@ Query::Query (const Query & q)
 
 Query::Query(const string dataIn, const string host_url)
 {
-    //TODO : make it a changeable parameter
     HostURL = host_url;
 
     //Make all the split needed
@@ -145,17 +144,6 @@ Query::Query(const string dataIn, const string host_url)
     cout << *this << endl;
 #endif
 } //----- Fin de Query
-
-
-Query::~Query ( )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Query>" << endl;
-#endif
-} //----- Fin de ~Query
-
 
 //------------------------------------------------------------------ PRIVE
 

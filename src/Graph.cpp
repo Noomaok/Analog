@@ -59,7 +59,7 @@ void Graph::printHits()
     multimap<int,string> flipped_pageHits = flip_map(pageHits);
     multimap<int,string>::reverse_iterator r_it;
 
-    cout << endl << "Top 10 requested urls ordered by hits :" << endl;
+    cout << endl << "10 most requested URL sorted by hits :" << endl;
     //iterate through multimap until N_PRINT elements have been printed (or end of multimap)
     for (r_it = flipped_pageHits.rbegin(); distance(flipped_pageHits.rbegin(),r_it) < N_PRINT && r_it != flipped_pageHits.rend(); r_it++)
     {
@@ -108,21 +108,5 @@ Graph::Graph (set<Query>& querySet)
     {
         cout << "First : " << it->first << " Second : " << it->second << endl;
     }
-
 #endif
 } //----- Fin de Graph
-
-
-Graph::~Graph ( )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Graph>" << endl;
-#endif
-} //----- Fin de ~Graph
-
-
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées

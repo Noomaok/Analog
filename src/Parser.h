@@ -32,7 +32,7 @@ class Parser
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void SendDataToGraph(bool createGraph, string graph_fileName, unsigned int nArcs = 10);
+    void SendDataToGraph(bool convertGraph, string graph_fileName, unsigned int nArcs = 10);
     // type Méthode ( liste des paramètres );
     // Mode d'emploi :
     //
@@ -44,27 +44,10 @@ public:
     void removeUndefined();
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Parser & operator = ( const Parser & unParser );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
 
 //-------------------------------------------- Constructeurs - destructeur
-    Parser ( const Parser & unParser );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
 
     Parser (const string log_fileName, const string host_url);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~Parser ( );
     // Mode d'emploi :
     //
     // Contrat :

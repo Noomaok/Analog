@@ -44,24 +44,9 @@ public:
     ordre alphabétique décroissant
     */
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-    Graph & operator = ( const Graph & unGraph );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
 //-------------------------------------------- Constructeurs - destructeur
 
     Graph (set<Query>& queryList);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~Graph ( );
     // Mode d'emploi :
     //
     // Contrat :

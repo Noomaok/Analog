@@ -27,12 +27,12 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Parser::SendDataToGraph(bool createGraph, string graph_fileName, unsigned int nArcs)
+void Parser::SendDataToGraph(bool convertGraph, string graph_fileName, unsigned int nArcs)
 {
     Graph graph(querySet);
     graph.printHits();
 
-    if (createGraph)
+    if (convertGraph)
     {
         graph.createGraphFile(graph_fileName,nArcs);
     }
@@ -89,15 +89,6 @@ void Parser::removeUndefined()
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
-Parser::Parser ( const Parser & unParser )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Parser>" << endl;
-#endif
-} //----- Fin de Parser (constructeur de copie)
-
 
 Parser::Parser (const string log_fileName, const string host_url)
 // Algorithme :
@@ -120,15 +111,6 @@ Parser::Parser (const string log_fileName, const string host_url)
     cout << "Nb Requêtes : " << querySet.size() << endl;
 #endif
 } //----- Fin de Parser
-
-
-Parser::~Parser ( )
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Parser>" << endl;
-#endif
-} //----- Fin de ~Parser
-
 
 //------------------------------------------------------------------ PRIVE
 

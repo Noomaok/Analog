@@ -56,12 +56,10 @@ Option -e multiple calls
 
 ```
 ./analog -g dotfile.dot /tmp/anonyme.log
-
 ```
 
 ### Test 7
 
 ```
 ./analog -e /tmp/anonyme.log
-
 ```

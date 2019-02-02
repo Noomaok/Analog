@@ -25,12 +25,9 @@ using namespace std;
 #include "Tools.h"
 
 //------------------------------------------------------------- Constantes
-static int nbExceptions = 0;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-
-int Query::getNbExceptions() { return nbExceptions; }
 
 void Query::makeDate(string strToConvert)
 {

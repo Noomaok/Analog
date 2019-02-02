@@ -9,6 +9,7 @@ J'ai ajouté l'option "-u", elle permet de spécifier un autre nom pour le host 
 
 List of available options :
 
+'''
 * "-h                   : Display this message"
 * "-d                   : Generate the pdf graph"
 * "-e [filter]          : Keep all requested urls where the filter string is present, others are deleted. Referer urls are not affected. If no filter is given, then the default filter will be ".html"
@@ -17,9 +18,9 @@ List of available options :
 * "-t hour              : Keep all requested urls whitin the interval [hour  hour+1], others are deleted"
 * "-u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter"
 * "-x                   : Do not display all undefined referer requests"
+'''
 
-# TODO
+## TODO
 
-Verify existence of file
 Add more filter for date (if time)
 Option -e multiple calls

@@ -63,7 +63,7 @@ void Graph::printHits()
     //iterate through multimap until N_PRINT elements have been printed (or end of multimap)
     for (r_it = flipped_pageHits.rbegin(); distance(flipped_pageHits.rbegin(),r_it) < N_PRINT && r_it != flipped_pageHits.rend(); r_it++)
     {
-        cout << setw(25) << left << r_it->second << " (" << r_it->first << " hits)" << endl;
+        cout << setw(30) << left << r_it->second << " (" << r_it->first << " hits)" << endl;
     }
     cout << endl;
 } //----- Fin de Méthode

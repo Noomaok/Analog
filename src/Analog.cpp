@@ -28,6 +28,7 @@ using namespace std;
 #define BAD_ARG_HOUR 3
 #define BAD_ARG_HOST 4
 #define BAD_ARG_ARCS 5
+#define NO_DOT_FILE 6
 #define INVALID_COMMAND 100
 
 //----------------------------------------------------------------- PUBLIC
@@ -70,7 +71,7 @@ int main(int argc, char* argv[])
     int parser_hitHour = 0;
     int graph_nArcs = 10;
 
-    bool convertGraph = false;
+    bool makeDotFile = false;
     bool doFilterURL = false;
     bool doFilterHour = false;
     bool doFilterUndefined = false;
@@ -83,7 +84,7 @@ int main(int argc, char* argv[])
             switch (argv[i][1])
             {
                 case 'g':
-                    convertGraph = true;
+                    makeDotFile = true;
                     if(nextArgCorrect(i, argc, argv, ".dot"))
                     {
                         graph_fileName = argv[++i];
@@ -211,11 +212,11 @@ int main(int argc, char* argv[])
         p.removeUndefined();
     }
 
-    p.SendDataToGraph(convertGraph, graph_fileName, graph_nArcs);
+    p.SendDataToGraph(makeDotFile, graph_fileName, graph_nArcs);
 
     if(doDrawGraph)
     {
-        if(convertGraph)
+        if(makeDotFile)
         {
             string s = "dot -Tpdf -o " + graph_fileName.substr(0,graph_fileName.length()-4) + ".pdf " + graph_fileName;
             system(s.c_str());
@@ -224,7 +225,7 @@ int main(int argc, char* argv[])
         else
         {
             cerr << "Error : no Dot-file generated" << endl;
-            return 6;
+            return NO_DOT_FILE;
         }
     }
 

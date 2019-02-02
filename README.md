@@ -6,11 +6,11 @@ List of available options :
 
 ```
 -h                   : Display this message
--d                   : Generate the pdf graph
--e [filter]          : Keep all requested urls where the filter string is present, others are deleted. Referer urls are not affected. If no filter is given, then the default filter will be ".html
+-e [filter]          : Filter out all requested urls not containing the [filter] string. Referer urls are not affected. Default filter is ".html"
 -g dot_file_name     : Generate a Dot-file out of the analysed log file
--n nb_arcs           : Do not display all undefined referer requests
--t hour              : Keep all requested urls whitin the interval [hour  hour+1], others are deleted
+-n nb_arcs           : When used with -g, specifies the number of arcs in the graph. Default value is 10
+-d                   : Generate a PDF version of the graph graph. Must be used with -g
+-t hour              : Filter out every request not sent within the interval [hour;hour+1]
 -u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter
 -x                   : Do not display all undefined referer requests
 ```

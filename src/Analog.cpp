@@ -22,6 +22,13 @@ using namespace std;
 #include "Query.h"
 
 //------------------------------------------------------------- Constantes
+#define EXIT_SUCCESS 0
+#define MISSING_LOG_ARG 1
+#define BAD_ARG_LOG_NOT_FOUND 2
+#define BAD_ARG_HOUR 3
+#define BAD_ARG_HOST 4
+#define BAD_ARG_ARCS 5
+#define INVALID_COMMAND 100
 
 //----------------------------------------------------------------- PUBLIC
 
@@ -116,7 +123,7 @@ int main(int argc, char* argv[])
                         else
                         {
                             cerr << "Error : Hour must be an integer between 0 and 23" << endl;
-                            return 3;
+                            return BAD_ARG_HOUR;
                         }
                     }
                     cout << "- Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
@@ -131,13 +138,13 @@ int main(int argc, char* argv[])
                     else
                     {
                         cerr << "Error : No host name specified !" << endl;
-                        return 4;
+                        return BAD_ARG_HOST;
                     }
                     break;
 
                 case 'h':
                     displayHelp();
-                    return 0;
+                    return EXIT_SUCCESS;
 
                 case 'x':
                     doFilterUndefined = true;
@@ -151,7 +158,7 @@ int main(int argc, char* argv[])
                         if (graph_nArcs <= 0)
                         {
                             cerr << "Error : Number of arcs must be a positive integer" << endl;
-                            return 5;
+                            return BAD_ARG_ARCS;
                         }
                         cout << "- Graph will contain " << graph_nArcs << " arcs" << endl;
                     }
@@ -165,7 +172,7 @@ int main(int argc, char* argv[])
                 default:
                     cerr << "Error : Invalid command" << endl;
                     cout << "- Use ./analog -h for help" << endl;
-                    return 100;
+                    return INVALID_COMMAND;
                     break;
             }
         }
@@ -176,7 +183,7 @@ int main(int argc, char* argv[])
             if(!file.is_open())
             {
                 cerr << "Error : Log file " << log_fileName << " not found" << endl;
-                return 2;
+                return BAD_ARG_LOG_NOT_FOUND;
             }
         }
     }
@@ -184,7 +191,7 @@ int main(int argc, char* argv[])
     if(log_fileName == "")
     {
         cerr << "Error : Missing file to analyze" << endl;
-        return 1;
+        return MISSING_LOG_ARG;
     }
 
     Parser p(log_fileName,query_hosturl);
@@ -221,5 +228,5 @@ int main(int argc, char* argv[])
         }
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

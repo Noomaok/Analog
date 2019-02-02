@@ -1,18 +1,19 @@
 CPP = g++ -std=c++11
 CPPFLAGS = -g -Wall -Werror -pedantic -ansi #-DMAP
-BIN = bin/
+OPTIMIZATION = -O3
+BIN = bin
 EXE = $(BIN)/analog
-INT = $(wildcard src/*.h) src/Analog.cpp
-REAL = $(INT:.h=.cpp)
+INT = $(wildcard src/*.h)
+REAL = $(INT:.h=.cpp) src/Analog.cpp
 ECHO = @echo
 .PHONY: clean tests
 
 help:
 	$(ECHO) "- help    : Display this message"
-	$(ECHO) "- tests   : Run all tests"
 	$(ECHO) "- debug   : Build debug version of <Analog>"
 	$(ECHO) "- release : Build release version of <Analog>"
-	$(ECHO) "- clean   : Delete all generated files"
+	$(ECHO) "- tests   : Run all tests"
+	$(ECHO) "- clean   : Delete binary files"
 
 debug:
 	@ mkdir -p bin
@@ -22,7 +23,7 @@ debug:
 release:
 	@ mkdir -p bin
 	$(ECHO) "Build release version of <$(EXE)>"
-	@ $(CPP) -o $(EXE) $(REAL)
+	@ $(CPP) $(OPTIMIZATION) -o $(EXE) $(REAL)
 
 tests:
 	@ cd Tests/ && ./mktest.sh

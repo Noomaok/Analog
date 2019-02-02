@@ -9,10 +9,14 @@ J'ai ajouté l'option "-u", elle permet de spécifier un autre nom pour le host 
 
 List of available options :
 
-* -e \[filter\]        : Keep all requested urls where the filter string is present, others are deleted. Referer urls are not affected. If no filter is given, then the default filter will be ".html"
-* -g \[dot_file_name\] : Generate a Dot-file out of the analysed log file.
-* -t \[hour\]          : Keep all requested urls whitin the interval \[hour ; hour+1\[], others are deleted.
-* -u \[host_url\]      : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter.
+* "-h                   : Display this message"
+* "-d                   : Generate the pdf graph"
+* "-e [filter]          : Keep all requested urls where the filter string is present, others are deleted. Referer urls are not affected. If no filter is given, then the default filter will be ".html"
+* "-g dot_file_name     : Generate a Dot-file out of the analysed log file"
+* "-n nb_arcs           : Do not display all undefined referer requests"
+* "-t hour              : Keep all requested urls whitin the interval [hour  hour+1], others are deleted"
+* "-u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter"
+* "-x                   : Do not display all undefined referer requests"
 
 # TODO
 

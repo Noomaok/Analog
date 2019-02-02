@@ -17,15 +17,16 @@ help:
 
 debug:
 	@ mkdir -p bin
-	$(ECHO) "Build debug version of <$(EXE)>"
+	$(ECHO) "Building debug version of <$(EXE)> ..."
 	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
 
 release:
 	@ mkdir -p bin
-	$(ECHO) "Build release version of <$(EXE)>"
+	$(ECHO) "Building release version of <$(EXE)> ..."
 	@ $(CPP) $(OPTIMIZATION) -o $(EXE) $(REAL)
 
 tests:
+	$(ECHO) "Running tests ..."
 	@ cd Tests/ && ./mktest.sh
 
 clean:

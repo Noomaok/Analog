@@ -11,6 +11,7 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
+#include <time.h> //measuring performance
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
@@ -63,6 +64,12 @@ void displayHelp()
 
 int main(int argc, char* argv[])
 {
+    #ifdef SPEEDTEST
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+    #endif
+
     string log_fileName =  "";
     string graph_fileName = "";
     string parser_urlFilter = ".html";
@@ -229,5 +236,11 @@ int main(int argc, char* argv[])
         }
     }
 
+    #ifdef SPEEDTEST
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    clog << "Temps d'exécution : " << cpu_time_used << endl;
+    #endif
+    
     return EXIT_SUCCESS;
 }

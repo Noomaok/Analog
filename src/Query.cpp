@@ -36,7 +36,7 @@ void Query::makeDate(string strToConvert)
     vector<string> date_hour = Split(date_day.back(),':');
 
     DateOfQuery.day = atoi(date_day.front().c_str());
-    DateOfQuery.mounth = date_day.at(1);
+    DateOfQuery.month = date_day.at(1);
     DateOfQuery.year = atoi(date_day.at(2).c_str());
     DateOfQuery.hour = atoi(date_hour.at(1).c_str());
     DateOfQuery.minute = atoi(date_hour.at(2).c_str());
@@ -50,7 +50,7 @@ ostream& operator<<(ostream& os, const Query& q)
 {
     os << "-----------------------------------------" << setfill('0') << endl;
     os << q.IPClient << " " << q.UserLogName << " " << q.AuthenticatedUser << endl;
-    os << "[" << q.DateOfQuery.day << "/" << q.DateOfQuery.mounth << "/" << q.DateOfQuery.year << " " << setw(2) << q.DateOfQuery.hour << ":" << setw(2) << q.DateOfQuery.minute << ":" << setw(2) << q.DateOfQuery.second << "]" << endl;
+    os << "[" << q.DateOfQuery.day << "/" << q.DateOfQuery.month << "/" << q.DateOfQuery.year << " " << setw(2) << q.DateOfQuery.hour << ":" << setw(2) << q.DateOfQuery.minute << ":" << setw(2) << q.DateOfQuery.second << "]" << endl;
     os << q.ActionType << " " << q.RequestURL << " " << q.Protocol << endl;
     os << q.ReturnCode << " " << q.DataSent << endl;
     os << q.RefererURL <<endl;
@@ -58,16 +58,16 @@ ostream& operator<<(ostream& os, const Query& q)
     return os;
 }//--------Fin de la surchage de l'operateur <<
 
-//opérateur de comparaison nécéssaire à l'insert dans un set
+//opérateur de comparaison nécéssaire à l'insertion dans un set
 bool operator < (const Query& q1, const Query& q2)
 {
-    return (q1.IPClient < q2.IPClient
+    return (q1.DateOfQuery.year < q2.DateOfQuery.year
+            || q1.DateOfQuery.month < q2.DateOfQuery.month
+            || q1.DateOfQuery.day < q2.DateOfQuery.day
             || q1.DateOfQuery.hour < q2.DateOfQuery.hour
             || q1.DateOfQuery.minute < q2.DateOfQuery.minute
             || q1.DateOfQuery.second < q2.DateOfQuery.second
-            || q1.DateOfQuery.day < q2.DateOfQuery.day
-            || q1.DateOfQuery.mounth < q2.DateOfQuery.mounth
-            || q1.DateOfQuery.year < q2.DateOfQuery.year);
+            || q1.IPClient < q2.IPClient);
 }//--------Fin de la surchage de l'operateur <
 
 //-------------------------------------------- Constructeurs - destructeur

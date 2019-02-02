@@ -21,7 +21,7 @@ using namespace std;
 //------------------------------------------------------------------ Types
 typedef struct Date_t{
     int day;
-    string mounth;
+    string month;
     int year;
     int hour;
     int minute;

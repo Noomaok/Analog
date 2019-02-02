@@ -101,7 +101,7 @@ Parser::Parser (const string log_fileName, const string host_url)
     while (getline(logFile, line))
     {
         Query query(line, host_url);
-        querySet.insert(query);
+        querySet.emplace(query);
     }
 
 #ifdef MAP

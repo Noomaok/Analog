@@ -30,6 +30,7 @@ using namespace std;
 #define BAD_ARG_HOST 4
 #define BAD_ARG_ARCS 5
 #define NO_DOT_FILE 6
+#define NO_ARG_HOUR 7
 #define INVALID_COMMAND 100
 
 //----------------------------------------------------------------- PUBLIC
@@ -133,6 +134,10 @@ int main(int argc, char* argv[])
                             cerr << "Error : Hour must be an integer between 0 and 23" << endl;
                             return BAD_ARG_HOUR;
                         }
+                    }
+                    else{
+                        cerr << "Error : No hour specified" << endl;
+                        return NO_ARG_HOUR;
                     }
                     cout << "- Only hits between " << parser_hitHour << "h and " << parser_hitHour + 1 << "h have been taken into account" << endl;
                     break;

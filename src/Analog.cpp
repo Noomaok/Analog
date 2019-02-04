@@ -145,7 +145,7 @@ int main(int argc, char* argv[])
                     }
                     else
                     {
-                        cerr << "Error : No host name specified !" << endl;
+                        cerr << "Error : No host name specified" << endl;
                         return BAD_ARG_HOST;
                     }
                     break;

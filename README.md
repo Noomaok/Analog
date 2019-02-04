@@ -19,9 +19,9 @@ List of available options :
 
 Add more filter for date (if time)
 Option -e multiple calls
-BUG : -t sans option ne filtre pas
+BUG : -t sans option ne filtre pas (BAD ARG HOUR pas déclenché)
       -u avec une URL qui n'est pas dans le log ne filtre pas
-      Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spécifications et ça augmente la complexité pour quelque chose de pas forcément utile ici, à voir si on le
+      Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spécifications et ça augmente la complexité pour quelque chose de pas forcément utile ici, à voir si on le garde
 
 ## Tests
 

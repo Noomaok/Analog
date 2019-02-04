@@ -49,13 +49,13 @@ Option -e multiple calls
 ### Test 5
 
 ```
-./analog -g dotfile /tmp/anonyme.log
+./analog -g graphTest /tmp/anonyme.log
 ```
 
 ### Test 6
 
 ```
-./analog -g dotfile.dot /tmp/anonyme.log
+./analog -g graphTest.dot /tmp/anonyme.log
 ```
 
 ### Test 7
@@ -63,3 +63,77 @@ Option -e multiple calls
 ```
 ./analog -e /tmp/anonyme.log
 ```
+
+### Test 8
+
+```
+./analog -e .jpg /tmp/anonyme.log
+```
+
+### Test 9
+
+```
+./analog -t /tmp/anonyme.log
+```
+
+### Test 10
+
+```
+./analog -t 12 /tmp/anonyme.log
+```
+
+### Test 11
+
+```
+./analog -d /tmp/anonyme.log
+```
+
+### Test 12
+
+```
+./analog -g graphTest -d /tmp/anonyme.log
+```
+
+### Test 13
+
+```
+./analog -x /tmp/anonyme.log
+```
+
+### Test 14
+
+```
+./analog -n /tmp/anonyme.log
+```
+
+### Test 15
+
+```
+./analog -n /tmp/anonyme.log
+```
+
+### Test 16
+
+```
+./analog -g graphTest -n 50 /tmp/anonyme.log
+```
+
+### Test 17
+
+```
+./analog -u /tmp/anonyme.log
+```
+
+### Test 18
+
+```
+./analog -u http://google.fr /tmp/anonyme.log
+```
+
+### Test 19
+
+```
+./analog -e -g graphTest -n 50 -t 14 -x /tmp/anonyme.log
+```
+
+

@@ -1,1 +1,1 @@
-bin/analog -g /tmp/anonyme.log
+bin/analog -u http://intrSiteWebIF.fr /tmp/anonyme.log

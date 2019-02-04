@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
                     if(nextArgCorrect(i, argc, argv))
                     {
                         query_hosturl = argv[++i];
-                        cout << "- Analyze for the host : " << endl;
+                        cout << "- Analyze for the host : " << query_hosturl << endl;
                     }
                     else
                     {

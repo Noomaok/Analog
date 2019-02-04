@@ -19,6 +19,9 @@ List of available options :
 
 Add more filter for date (if time)
 Option -e multiple calls
+BUG : -t sans option ne filtre pas
+      -u avec une URL qui n'est pas dans le log ne filtre pas
+      Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spécifications et ça augmente la complexité pour quelque chose de pas forcément utile ici, à voir si on le
 
 ## Tests
 
@@ -109,31 +112,25 @@ Option -e multiple calls
 ### Test 15
 
 ```
-./analog -n /tmp/anonyme.log
+./analog -g graphTest -n 50 /tmp/anonyme.log
 ```
 
 ### Test 16
 
 ```
-./analog -g graphTest -n 50 /tmp/anonyme.log
+./analog -u /tmp/anonyme.log
 ```
 
 ### Test 17
 
 ```
-./analog -u /tmp/anonyme.log
+./analog -u http://SiteWebIF.fr /tmp/anonyme.log
 ```
 
 ### Test 18
 
 ```
-./analog -u http://google.fr /tmp/anonyme.log
-```
-
-### Test 19
-
-```
-./analog -e -g graphTest -n 50 -t 14 -x /tmp/anonyme.log
+./analog -e -g graphTest -n -d 50 -t 14 -x /tmp/anonyme.log
 ```
 
 

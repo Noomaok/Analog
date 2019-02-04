@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
 
                 case 'd':
                     doDrawGraph = true;
-                    cout << "- Generating PDF file of the graph ..." << endl;
+                    cout << "- Generate PDF file of the graph" << endl;
                     break;
 
                 default:

@@ -93,7 +93,6 @@ Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spé
 ```
 
 ### Test 12
-
 ```
 ./analog -g graphTest -d /tmp/anonyme.log
 ```
@@ -113,7 +112,7 @@ Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spé
 ### Test 15
 
 ```
-./analog -g graphTest -n 50 /tmp/anonyme.log
+./analog -g graphFile -n 50 /tmp/anonyme.log
 ```
 
 ### Test 16

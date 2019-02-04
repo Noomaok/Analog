@@ -1,1 +1,1 @@
-bin/analog -t 12/tmp/anonyme.log
+bin/analog -g graphTest -d /tmp/anonyme.log

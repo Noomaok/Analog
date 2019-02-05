@@ -61,13 +61,7 @@ ostream& operator<<(ostream& os, const Query& q)
 //opérateur de comparaison nécéssaire à l'insertion dans un set
 bool operator < (const Query& q1, const Query& q2)
 {
-    return (q1.DateOfQuery.year < q2.DateOfQuery.year
-            || q1.DateOfQuery.month < q2.DateOfQuery.month
-            || q1.DateOfQuery.day < q2.DateOfQuery.day
-            || q1.DateOfQuery.hour < q2.DateOfQuery.hour
-            || q1.DateOfQuery.minute < q2.DateOfQuery.minute
-            || q1.DateOfQuery.second < q2.DateOfQuery.second
-            || q1.IPClient < q2.IPClient);
+    return true;
 }//--------Fin de la surchage de l'operateur <
 
 //-------------------------------------------- Constructeurs - destructeur

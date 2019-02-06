@@ -31,6 +31,7 @@ using namespace std;
 #define BAD_ARG_ARCS 5
 #define NO_DOT_FILE 6
 #define NO_ARG_HOUR 7
+#define NO_ARG_ARCS 8
 #define INVALID_COMMAND 100
 
 //----------------------------------------------------------------- PUBLIC
@@ -83,6 +84,7 @@ int main(int argc, char* argv[])
     bool doFilterURL = false;
     bool doFilterHour = false;
     bool doFilterUndefined = false;
+    bool doFilterArcs = false;
     bool doDrawGraph = false;
 
     for(int i = 1; i < argc; i++)
@@ -168,12 +170,17 @@ int main(int argc, char* argv[])
                     if(nextArgCorrect(i, argc, argv))
                     {
                         graph_nArcs = atoi(argv[++i]);
+                        doFilterArcs = true;
                         if (graph_nArcs <= 0)
                         {
                             cerr << "Error : Number of arcs must be a positive integer" << endl;
                             return BAD_ARG_ARCS;
                         }
                         cout << "- Graph will contain " << graph_nArcs << " arcs" << endl;
+                    }
+                    else{
+                        cerr << "Error : Must specify number of arcs" << endl;
+                        return NO_ARG_ARCS;
                     }
                     break;
 
@@ -239,6 +246,11 @@ int main(int argc, char* argv[])
             cerr << "Error : no Dot-file generated" << endl;
             return NO_DOT_FILE;
         }
+    }
+    else if (doFilterArcs)
+    {
+        cerr << "Error : no Dot-file generated";
+        return NO_DOT_FILE;
     }
 
     #ifdef SPEEDTEST

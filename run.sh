@@ -1,1 +1,1 @@
-bin/analog -e .jpg tmp/court.log
+bin/analog -n 4 tmp/court.log

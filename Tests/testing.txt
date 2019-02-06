@@ -1,0 +1,225 @@
+-----------------------------------------------------------
+| Test id : Test01
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog sans aucun paramètres
+
+-----------------------------------------------------------
+../../bin/analog 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test02
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec un fichier log inexistant
+-----------------------------------------------------------
+../../bin/analog inexistant.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test03
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog sans option avec un fichier log 
+valide (court.log)
+-----------------------------------------------------------
+../../bin/analog ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test04
+-----------------------------------------------------------
+Description :
+Appel d'Analog avec -g sans arguments sur un fichier log 
+valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -g ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       File #1     : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test05
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-g" suivie d'un nom de 
+fichier quelconque (graphTest) sans extension sur un 
+fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -g graphTest ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       File #1     : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test06
+-----------------------------------------------------------
+Description :
+Test d'appel de analog avec -g et un nom complet de graph 
+(graphTest.dot) sur un fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -g graphTest.dot ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       File #1     : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test07
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-e" sans paramètre 
+afin de ne garder que les pages html sur un fichier log 
+valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -e ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test08
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-e" et un paramètre 
+.jpg afin de ne garder que les images sur un fichier log 
+valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -e .jpg ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test09
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-t" sans paramètre sur 
+un fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -t ../court.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test10
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-t" et une heure en 
+paramètre sur un fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -t 12 ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test11
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-d" mais sans l'option 
+-g qui permet de créer le graphe sur un fichier log valide 
+(court.log)
+-----------------------------------------------------------
+../../bin/analog -d ../court.log >temp.txt 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test12
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-d" associée à "-g" 
+qui permet de convertir le graphe en format PDF sur un 
+fichier log valide (court.log)
+Remarque : le PDF généré ne peut pas être comparé avec un 
+outfile car les metadata associées à chaque PDF sont 
+différentes
+-----------------------------------------------------------
+../../bin/analog -g graphTest -d ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       File #1     : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test13
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-x" qui supprime les 
+referer undefined sur un fichier log valide 
+(courtUndefined.log)-----------------------------------------------------------
+../../bin/analog -x ../courtUndefined.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test14
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-n" sans paramètres 
+sur un fichier log valide (court.log)-----------------------------------------------------------
+../../bin/analog -n ../court.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test15
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-n" et un paramètre 
+valide sur un fichier log valide (court.log)-----------------------------------------------------------
+../../bin/analog -n 4 ../court.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+Passed tests     : 15
+Failed tests     : 0
+Misformed tests  : 0
+-----------------------
+Total            : 15

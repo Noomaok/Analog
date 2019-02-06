@@ -41,96 +41,107 @@ Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spé
 ### Test 3
 
 ```
-./analog /tmp/anonyme.log
+./analog court.log
 ```
 
 ### Test 4
 
 ```
-./analog -g /tmp/anonyme.log
+./analog -g court.log
 ```
 
 ### Test 5
 
 ```
-./analog -g graphTest /tmp/anonyme.log
+./analog -g graphTest court.log
 ```
 
 ### Test 6
 
 ```
-./analog -g graphTest.dot /tmp/anonyme.log
+./analog -g graphTest.dot court.log
 ```
 
 ### Test 7
 
 ```
-./analog -e /tmp/anonyme.log
+./analog -e court.log
 ```
 
 ### Test 8
 
 ```
-./analog -e .jpg /tmp/anonyme.log
+./analog -e .jpg court.log
 ```
 
 ### Test 9
 
 ```
-./analog -t /tmp/anonyme.log
+./analog -t court.log
 ```
 
 ### Test 10
 
 ```
-./analog -t 12 /tmp/anonyme.log
+./analog -t 12 court.log
 ```
 
 ### Test 11
 
 ```
-./analog -d /tmp/anonyme.log
+./analog -d court.log
 ```
 
 ### Test 12
 ```
-./analog -g graphTest -d /tmp/anonyme.log
+./analog -g graphTest -d court.log
 ```
 
 ### Test 13
 
 ```
-./analog -x /tmp/anonyme.log
+./analog -x courtUndefined.log
 ```
 
 ### Test 14
 
 ```
-./analog -n /tmp/anonyme.log
+./analog -n court.log
 ```
 
 ### Test 15
 
 ```
-./analog -g graphFile -n 50 /tmp/anonyme.log
+./analog -g graphFile -n 50 court.log
 ```
 
 ### Test 16
 
 ```
-./analog -u /tmp/anonyme.log
+./analog -u court.log ?
 ```
 
 ### Test 17
 
 ```
-./analog -u http://SiteWebIF.fr /tmp/anonyme.log
+./analog -u http://SiteWebIF.fr court.log ?
 ```
 
 ### Test 18
 
 ```
-./analog -e -g graphTest -n -d 50 -t 14 -x /tmp/anonyme.log
+./analog -e -g graphTest -n -d 50 -t 14 -x anonyme.log
 ```
 
+### Test 19
+
+```
+./analog -t 29 court.log
+```
+
+### Test 20
+
+```
+./analog -n -30 court.log
+```
 

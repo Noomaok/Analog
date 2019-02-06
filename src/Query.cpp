@@ -61,7 +61,7 @@ ostream& operator<<(ostream& os, const Query& q)
 //opérateur de comparaison nécéssaire à l'insertion dans un set
 bool operator < (const Query& q1, const Query& q2)
 {
-    return true;
+    return true; //fastest
 }//--------Fin de la surchage de l'operateur <
 
 //-------------------------------------------- Constructeurs - destructeur

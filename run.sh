@@ -1,1 +1,1 @@
-bin/analog -e /tmp/anonyme.log
+bin/analog -t 12 /tmp/anonyme.log

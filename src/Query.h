@@ -41,11 +41,11 @@ class Query
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    inline string getRequestURL() const { return RequestURL; };
-    inline string getRefererURL() const { return RefererURL; };
-    inline int getHour() const { return DateOfQuery.hour; };
+    inline string GetRequestURL() const { return RequestURL; };
+    inline string GetRefererURL() const { return RefererURL; };
+    inline int GetHour() const { return DateOfQuery.hour; };
 
-    void makeDate(string strToConvert);
+    void MakeDate(string strToConvert);
     // Mode d'emploi :
     //
     // Contrat :
@@ -62,7 +62,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Query ( const Query & aQuery );
+    Query(const Query & aQuery);
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :

@@ -29,11 +29,11 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void Query::makeDate(string strToConvert)
+void Query::MakeDate(string strToConvert)
 {
-    vector<string> date_mainelement = Split(strToConvert,' ');
-    vector<string> date_day = Split(date_mainelement.front(),'/');
-    vector<string> date_hour = Split(date_day.back(),':');
+    vector<string> date_mainelement = split(strToConvert,' ');
+    vector<string> date_day = split(date_mainelement.front(),'/');
+    vector<string> date_hour = split(date_day.back(),':');
 
     DateOfQuery.day = atoi(date_day.front().c_str());
     DateOfQuery.month = date_day.at(1);
@@ -65,7 +65,7 @@ bool operator < (const Query& q1, const Query& q2)
 }//--------Fin de la surchage de l'operateur <
 
 //-------------------------------------------- Constructeurs - destructeur
-Query::Query (const Query & q)
+Query::Query(const Query & q)
 {
     IPClient = q.IPClient;
     UserLogName = q.UserLogName;
@@ -91,19 +91,19 @@ Query::Query(const string dataIn, const string host_url)
     HostURL = host_url;
 
     //Make all the split needed
-    vector<string> query_elements = Split(dataIn, '"');
-    vector<string> query_ipdate = Split(query_elements.front(),'[');
-    vector<string> query_ipIdent = Split(query_ipdate.front(), ' ');
-    vector<string> query_URL = Split(query_elements.at(1), ' ');
+    vector<string> query_elements = split(dataIn, '"');
+    vector<string> query_ipdate = split(query_elements.front(),'[');
+    vector<string> query_ipIdent = split(query_ipdate.front(), ' ');
+    vector<string> query_URL = split(query_elements.at(1), ' ');
     string code = query_elements.at(2);
-    vector<string> query_codebyte = Split(code.substr(1,code.length()-1),' ');
+    vector<string> query_codebyte = split(code.substr(1,code.length()-1),' ');
     string completeRefUrl = query_elements.at(3);
 
     //affect data to correct variable
     IPClient = query_ipIdent.front();
     UserLogName = query_ipIdent.at(1);
     AuthenticatedUser = query_ipIdent.back();
-    makeDate(query_ipdate.at(1).substr(0,query_ipdate.at(1).length()-2));
+    MakeDate(query_ipdate.at(1).substr(0,query_ipdate.at(1).length()-2));
     ActionType = query_URL.front();
     RequestURL = query_URL.at(1);
     Protocol = query_URL.back();
@@ -119,7 +119,7 @@ Query::Query(const string dataIn, const string host_url)
         }
         else
         {
-            vector<string> urlProccess = Split(completeRefUrl, '/');
+            vector<string> urlProccess = split(completeRefUrl, '/');
             RefererURL = urlProccess.at(2);
         }
     }

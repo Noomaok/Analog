@@ -218,17 +218,17 @@ int main(int argc, char* argv[])
 
     if(doFilterURL)
     {
-        p.filterURLs(parser_urlFilter);
+        p.FilterURLs(parser_urlFilter);
     }
 
     if(doFilterHour)
     {
-        p.filterHour(parser_hitHour);
+        p.FilterHour(parser_hitHour);
     }
 
     if(doFilterUndefined)
     {
-        p.removeUndefined();
+        p.RemoveUndefined();
     }
 
     p.SendDataToGraph(makeDotFile, graph_fileName, graph_nArcs);

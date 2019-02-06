@@ -38,7 +38,7 @@ using namespace std;
 // Algorithme :
 //
 
-vector<string> Split(string strToSplit, char delimiter)
+vector<string> split(string strToSplit, char delimiter)
 {
     stringstream ss(strToSplit);
     string item;

@@ -38,12 +38,12 @@ void Parser::SendDataToGraph(bool convertGraph, string graph_fileName, unsigned 
     }
 }//---------Fin de SendDataToGraph
 
-void Parser::filterURLs(string extension)
+void Parser::FilterURLs(string extension)
 {
     set<Query>::iterator it = querySet.begin();
     while(it != querySet.end())
     {
-        if(it->getRequestURL().find(extension) == string::npos)
+        if(it->GetRequestURL().find(extension) == string::npos)
         {
             querySet.erase(it++);
         }
@@ -54,12 +54,12 @@ void Parser::filterURLs(string extension)
     }
 }//--------Fin de filterURLs
 
-void Parser::filterHour(int hour)
+void Parser::FilterHour(int hour)
 {
     set<Query>::iterator it = querySet.begin();
     while(it != querySet.end())
     {
-        if(it->getHour() != hour)
+        if(it->GetHour() != hour)
         {
             querySet.erase(it++);
         }
@@ -70,12 +70,12 @@ void Parser::filterHour(int hour)
     }
 }//--------Fin de filterTime
 
-void Parser::removeUndefined()
+void Parser::RemoveUndefined()
 {
     set<Query>::iterator it = querySet.begin();
     while(it != querySet.end())
     {
-        if(it->getRefererURL() == "Undefined")
+        if(it->GetRefererURL() == "Undefined")
         {
             querySet.erase(it++);
         }

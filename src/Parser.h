@@ -39,9 +39,9 @@ public:
     // Contrat :
     //
 
-    void filterURLs(string contain);
-    void filterHour(int hour);
-    void removeUndefined();
+    void FilterURLs(string contain);
+    void FilterHour(int hour);
+    void RemoveUndefined();
 
 //------------------------------------------------- Surcharge d'opérateurs
 

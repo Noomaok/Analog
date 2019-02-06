@@ -37,7 +37,7 @@ using namespace std;
 // Contrat :
 //
 
-vector<string> Split(string strToSplit, char delimiter);
+vector<string> split(string strToSplit, char delimiter);
 /*
     Mode d'emploi :
         strToSplit -> string à découper

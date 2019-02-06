@@ -43,7 +43,7 @@ void Graph::createGraphFile(string graph_fileName, unsigned int nArcs)
     //iterate through multimap until N_GRAPH elements have been added to the graph (or end of multimap)
     for (r_it = flipped_nodeLinks.rbegin(); distance(flipped_nodeLinks.rbegin(),r_it) < nArcs && r_it != flipped_nodeLinks.rend(); r_it++)
     {
-        vector<string> nodes = Split(r_it->second,'|');
+        vector<string> nodes = split(r_it->second,'|');
 
         graphFile << "\"" << nodes.back() << "\" -> \"" << nodes.front() << "\"";
         graphFile << " [label=\"" << r_it->first << "\"]" << endl;
@@ -75,7 +75,7 @@ Graph::Graph (set<Query>& querySet)
     for (set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
     {
         //fill nodeLinks map with concatenated URL and hits counter
-        string concatenated_URL = it->getRequestURL() + '|' + it->getRefererURL();
+        string concatenated_URL = it->GetRequestURL() + '|' + it->GetRefererURL();
         if (nodeLinks.find(concatenated_URL) == nodeLinks.end() )
         {
             // not found
@@ -89,15 +89,15 @@ Graph::Graph (set<Query>& querySet)
         }
 
         //fill pageHits map with concatenated URL and hits counter
-        if (pageHits.find(it->getRequestURL()) == pageHits.end())
+        if (pageHits.find(it->GetRequestURL()) == pageHits.end())
         {
             // not found
-            pageHits.insert(make_pair(it->getRequestURL(),1));
+            pageHits.insert(make_pair(it->GetRequestURL(),1));
         }
         else
         {
             // found
-            map<string,int>::iterator found = pageHits.find(it->getRequestURL());
+            map<string,int>::iterator found = pageHits.find(it->GetRequestURL());
             found->second++;
         }
     }

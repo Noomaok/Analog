@@ -249,7 +249,7 @@ int main(int argc, char* argv[])
     }
     else if (doFilterArcs)
     {
-        cerr << "Error : no Dot-file generated";
+        cerr << "Error : no Dot-file generated" << endl;
         return NO_DOT_FILE;
     }
 

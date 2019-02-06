@@ -1,1 +1,1 @@
-bin/analog -n 4 tmp/court.log
+bin/analog -n 4 tmp/anonyme.log

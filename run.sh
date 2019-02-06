@@ -1,1 +1,1 @@
-bin/analog -t 12 /tmp/anonyme.log
+bin/analog -e .jpg tmp/court.log

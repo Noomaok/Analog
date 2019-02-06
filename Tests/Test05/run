@@ -1,1 +1,1 @@
-../../bin/analog -g graphTest /tmp/anonyme.log
+../../bin/analog -g graphTest ../court.log

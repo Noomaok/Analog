@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
                             graph_fileName = "out.dot";
                         }
                     }
-                    cout << "- Generate Dot-file of the graph" << endl;
+                    cout << "- Generate Dot-file of the graph : " << graph_fileName << endl;
                     break;
 
                 case 'e':

@@ -1,1 +1,1 @@
-Test d'appel d'Analog avec l'option "-g" suivie d'un nom de fichier quelconque sans extension sur un fichier log valide (anonyme.log)
+Test d'appel d'Analog avec l'option "-g" suivie d'un nom de fichier quelconque (graphTest) sans extension sur un fichier log valide (court.log)

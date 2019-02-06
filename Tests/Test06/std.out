@@ -1,13 +1,9 @@
-- Generate Dot-file of the graph
+- Generate Dot-file of the graph : graphTest.dot
 
 10 most requested URL sorted by hits :
-/SiteWebIF/Intranet-etudiant.php (4680 hits)
-/temps/                        (2492 hits)
-/temps/3IF1.ics                (2161 hits)
-/notesif                       (1990 hits)
-/temps/4IF39.html              (1801 hits)
-/temps/3IF39.html              (1669 hits)
-/temps/4IF38.html              (1537 hits)
-/temps/4IF1.ics                (1267 hits)
-/temps/3IF3.ics                (1148 hits)
-/temps/5IF39.html              (1114 hits)
+/page3.html                    (6 hits)
+/page2.html                    (5 hits)
+/image1.jpg                    (3 hits)
+/page4.html                    (2 hits)
+/page1.html                    (2 hits)
+/edt.css                       (2 hits)

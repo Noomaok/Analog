@@ -112,31 +112,31 @@ Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spé
 ### Test 15
 
 ```
-./analog -g graphFile -n 50 court.log
+./analog -n 50 court.log
 ```
 
 ### Test 16
 
 ```
-./analog -n test court.log ?
+./analog -n test court.log
 ```
 
 ### Test 17
 
 ```
-./analog -u court.log ?
+./analog -u court.log
 ```
 
 ### Test 18
 
 ```
-./analog -u http://SiteWebIF.fr court.log ?
+./analog -u http://SiteWebIF.fr court.log
 ```
 
 ### Test 19
 
 ```
-./analog -e -g graphTest -n -d 50 -t 14 -x anonyme.log
+./analog -e -g graphTest -n -d 50 -t 14 -x /tmp/anonyme.log
 ```
 
 ### Test 20

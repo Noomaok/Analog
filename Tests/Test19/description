@@ -1,0 +1,1 @@
+Test d'appel d'Analog avec les options "-e" sans paramètre, "-g" avec un paramètre valide, "-n" avec un paramètre valide, "-d", "-t" avec un paramètre valide et "-x" sur le fichier anonyme.log

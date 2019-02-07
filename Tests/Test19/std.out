@@ -1,0 +1,20 @@
+- Exclude all URL not containing ".html"
+- Generate Dot-file of the graph : graphTest.dot
+- Graph will contain 50 arcs
+- Generate PDF file of the graph
+- Only hits between 14h and 15h have been taken into account
+- Undefined referer urls are not taken into account
+
+10 most requested URL sorted by hits :
+/temps/5IF39.html              (71 hits)
+/temps/4IF39.html              (67 hits)
+/temps/4IF38.html              (53 hits)
+/temps/3IF39.html              (50 hits)
+/temps/4IF40.html              (47 hits)
+/temps/5IF40.html              (40 hits)
+/temps/index.html              (39 hits)
+/temps/3IF38.html              (38 hits)
+/temps/3IF40.html              (30 hits)
+/temps/4IF41.html              (29 hits)
+
+Dot-file graphTest.dot converted to PDF file

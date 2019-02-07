@@ -1,0 +1,1 @@
+../../bin/analog -e -g graphTest -n 50 -d -t 14 -x /tmp/anonyme.log

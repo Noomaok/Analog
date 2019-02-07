@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
                         cout << "- Graph will contain " << graph_nArcs << " arcs" << endl;
                     }
                     else{
-                        cerr << "Error : Must specify number of arcs" << endl;
+                        cerr << "Error : Must specify positive number of arcs" << endl;
                         return NO_ARG_ARCS;
                     }
                     break;

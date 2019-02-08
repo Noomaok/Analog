@@ -184,7 +184,8 @@ différentes
 Description :
 Test d'appel d'Analog avec l'option "-x" qui supprime les 
 referer undefined sur un fichier log valide 
-(courtUndefined.log)-----------------------------------------------------------
+(courtUndefined.log)
+-----------------------------------------------------------
 ../../bin/analog -x ../courtUndefined.log >temp.txt
                                        Return Code : PASSED
                                        Stdout      : PASSED
@@ -197,7 +198,8 @@ referer undefined sur un fichier log valide
 -----------------------------------------------------------
 Description :
 Test d'appel d'Analog avec l'option "-n" sans paramètres 
-sur un fichier log valide (court.log)-----------------------------------------------------------
+sur un fichier log valide (court.log)
+-----------------------------------------------------------
 ../../bin/analog -n ../court.log 2>temperr.txt
                                        Return Code : PASSED
                                        Stderr      : PASSED
@@ -210,16 +212,121 @@ sur un fichier log valide (court.log)-------------------------------------------
 -----------------------------------------------------------
 Description :
 Test d'appel d'Analog avec l'option "-n" et un paramètre 
-valide sur un fichier log valide (court.log)-----------------------------------------------------------
-../../bin/analog -n 4 ../court.log >temp.txt
+valide sur un fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -n 4 ../court.log >temp.txt 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test16
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-n" et un paramètre 
+invalide (autre qu'un nombre) sur un fichier log valide 
+(court.log)
+-----------------------------------------------------------
+../../bin/analog -n test ../court.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test17
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-u" sans paramètre sur 
+un fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -u ../court.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test18
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-u" avec paramètre sur 
+un fichier log valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -u http://SiteWebIF.fr ../court.log >temp.txt
                                        Return Code : PASSED
                                        Stdout      : PASSED
                                        --------------------
                                        Global      : PASSED
 -----------------------------------------------------------
 
-Passed tests     : 15
+-----------------------------------------------------------
+| Test id : Test19
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec les options "-e" sans paramètre, 
+"-g" avec un paramètre valide, "-n" avec un paramètre 
+valide, "-d", "-t" avec un paramètre valide et "-x" sur le 
+fichier anonyme.log
+-----------------------------------------------------------
+../../bin/analog -e -g graphTest -n 50 -d -t 14 -x /tmp/anonyme.log >temp.txt
+                                       Return Code : PASSED
+                                       Stdout      : PASSED
+                                       File #1     : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test20
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-t" suivi d'un nombre 
+trop grand sur un fichier valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -t 29 ../court.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test21
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-n" suivi d'un nombre 
+négatif sur un fichier valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -n -30 ../court.log 2>temperr.txt
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+| Test id : Test22
+-----------------------------------------------------------
+Description :
+Test d'appel d'Analog avec l'option "-z" qui n'existe pas 
+sur un fichier valide (court.log)
+-----------------------------------------------------------
+../../bin/analog -z ../court.log 2>temperr.txt
+- Use ./analog -h for help
+                                       Return Code : PASSED
+                                       Stderr      : PASSED
+                                       --------------------
+                                       Global      : PASSED
+-----------------------------------------------------------
+
+Passed tests     : 22
 Failed tests     : 0
 Misformed tests  : 0
 -----------------------
-Total            : 15
+Total            : 22

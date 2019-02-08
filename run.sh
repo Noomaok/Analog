@@ -1,1 +1,1 @@
-bin/analog -n 4 tmp/anonyme.log
+bin/analog -u lol tmp/anonyme.log

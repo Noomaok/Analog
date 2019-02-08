@@ -17,12 +17,7 @@ List of available options :
 
 ## TODO
 
-Add more filter for date (if time)  
-
-Option -e multiple calls -> j'ai essayé avec un vector de strings à éliminer mais c'est un vrai bordel pour 1) le paramètre par défaut de -e  et 2) la première passe du filtre supprime toutes les requêtes ne contenant pas le premier élément du vector, donc avec une deuxième passe ça supprime tout.  
-
- -u avec une URL qui n'est pas dans le log ne filtre pas
-Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spécifications et ça augmente la complexité pour quelque chose de pas forcément utile ici, à voir si on le garde
+L'option -u n'a aucune action pour l'instant. Soit on l'implémente, soit on la supprime, mais on ne la laisse pas dans les tests telle quelle.
 
 ## Tests
 
@@ -149,5 +144,11 @@ Le filtre -u me parait utile mais assez bancal, ça nous rajoute pas mal de spé
 
 ```
 ./analog -n -30 court.log
+```
+
+### Test 22
+
+```
+./analog -z court.log
 ```
 

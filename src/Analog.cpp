@@ -31,7 +31,6 @@ using namespace std;
 #define BAD_ARG_ARCS 5
 #define NO_DOT_FILE 6
 #define NO_ARG_HOUR 7
-#define NO_ARG_ARCS 8
 #define INVALID_COMMAND 100
 
 //----------------------------------------------------------------- PUBLIC
@@ -180,7 +179,7 @@ int main(int argc, char* argv[])
                     }
                     else{
                         cerr << "Error : Must specify positive number of arcs" << endl;
-                        return NO_ARG_ARCS;
+                        return BAD_ARG_ARCS;
                     }
                     break;
 

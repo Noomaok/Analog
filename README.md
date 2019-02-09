@@ -17,7 +17,12 @@ List of available options :
 
 ## TODO
 
-L'option -u n'a aucune action pour l'instant. Soit on l'implémente, soit on la supprime, mais on ne la laisse pas dans les tests telle quelle.
+L'option -u n'a aucune action pour l'instant. Soit on l'implémente, soit on la supprime, mais on ne la laisse pas dans les tests telle quelle.  
+-> Pour l'instant ce que fait -u c'est de changer la string HostURL dans Query.cpp qui permet de check la présence de cet url dans le RefererUrl. 
+On ne voit pas trop l'effet avec nos fichiers log mais si on donnait un fichier log d'un autre site, là ce serait intéressant. 
+Après l'utilité n'est pas incroyable donc on peut retirer cet option pour ce simplifier la vie.  
+
+J'ai eu une idée pour check si le contenu du fichier log qui est passé à notre appli est correcte. Il faudrait utiliser des expression régulière pour voir si la ligne possède le bon format. Je vais regarder si on peut faire ça, dis moi ce que tu en pense.  
 
 ## Tests
 

@@ -14,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <regex>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -98,10 +99,14 @@ Parser::Parser (const string log_fileName, const string host_url)
     logFile.open(log_fileName.c_str());
 
     string line;
+    regex lineReg("\\d+\\.\\d+\\.\\d+\\.\\d+ [^ ]+ [^ ]+ \\[\\d+\\/\\w+\\/\\d+\\:\\d+\\:\\d+\\:\\d+ (\\+|\\-)\\d+\\] \"\\w+ [^ ]+ [^ |\"]+\" \\d+ (\\d+|-) \"[^ |\"]+\" \"[^\"]+\"$");
     while (getline(logFile, line))
     {
-        Query query(line, host_url);
-        querySet.insert(query);
+        if(regex_match(line,lineReg))
+        {
+            Query query(line, host_url);
+            querySet.insert(query);
+        }
     }
 
 #ifdef MAP

@@ -1,5 +1,5 @@
-CPP = g++ -std=c++11
-CPPFLAGS = -g -Wall -Werror -pedantic -ansi -DSPEEDTEST #-DMAP
+CPP = g++
+CPPFLAGS = -g -Wall -Werror -pedantic -ansi -DSPEEDTEST #-DMAP std=c++11 has to be put in last
 OPTIMIZATION = -O3 -DSPEEDTEST
 BIN = bin
 EXE = $(BIN)/analog
@@ -18,12 +18,12 @@ help:
 debug:
 	@ mkdir -p bin
 	$(ECHO) "Building debug version of <$(EXE)> ..."
-	@ $(CPP) $(CPPFLAGS) -o $(EXE) $(REAL)
+	@ $(CPP) $(CPPFLAGS) -std=c++11 -o $(EXE) $(REAL)
 
 release:
 	@ mkdir -p bin
 	$(ECHO) "Building release version of <$(EXE)> ..."
-	@ $(CPP) $(OPTIMIZATION) -o $(EXE) $(REAL)
+	@ $(CPP) $(OPTIMIZATION) -std=c++11 -o $(EXE) $(REAL)
 
 tests:
 	$(ECHO) "Running tests ..."

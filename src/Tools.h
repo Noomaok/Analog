@@ -1,9 +1,8 @@
 /*************************************************************************
                            Tools  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Interface du module <Tools> (fichier Tools.h) -------------------
@@ -12,11 +11,11 @@
 
 //------------------------------------------------------------------------
 // Rôle du module <Tools>
-//
-//
+//  Permet d'utiliser des méthodes génériques qui sont utilisé par
+//  plusieurs classes.
 //------------------------------------------------------------------------
 
-/////////////////////////////////////////////////////////////////  INCLUDE
+//---------------------------------------------------------------- INCLUDE
 //--------------------------------------------------- Interfaces utilisées
 
 #include <vector>
@@ -25,17 +24,8 @@
 
 using namespace std;
 
-//------------------------------------------------------------- Constantes
-
-//------------------------------------------------------------------ Types
-
-//////////////////////////////////////////////////////////////////  PUBLIC
+//----------------------------------------------------------------- PUBLIC
 //---------------------------------------------------- Fonctions publiques
-// type Nom ( liste de paramètres );
-// Mode d'emploi :
-//
-// Contrat :
-//
 
 vector<string> split(string strToSplit, char delimiter);
 /*
@@ -48,7 +38,19 @@ vector<string> split(string strToSplit, char delimiter);
 
 template <typename A, typename B>
 pair<B,A> flip_pair(const pair<A,B> &p);
+/*
+    Mode d'emploi :
+        p -> pair à retourner
+    Contrat :
+        renvoie un pair avec les éléments inversés
+*/
 
 multimap<int,string> flip_map(const map<string,int>& src);
+/*
+    Mode d'emploi :
+        src -> map à retourner
+    Contrat :
+        renvoie une map ayant ces composantes inversées
+*/
 
 #endif // TOOLS_H

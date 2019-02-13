@@ -1,15 +1,13 @@
 /*************************************************************************
                            Analog  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Réalisation de la classe <Analog> (fichier Analog.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
-
 //-------------------------------------------------------- Include système
 #include <time.h> //measuring performance
 #include <iostream>
@@ -34,7 +32,6 @@ using namespace std;
 #define INVALID_COMMAND 100
 
 //----------------------------------------------------------------- PUBLIC
-
 //----------------------------------------------------- Méthodes publiques
 
 bool nextArgCorrect(int index, int size, char** args, string extension = "")
@@ -49,7 +46,7 @@ bool nextArgCorrect(int index, int size, char** args, string extension = "")
         }
     }
     return false;
-}
+}//-------Fin de nextArgCorrect
 
 void displayHelp()
 {
@@ -61,7 +58,7 @@ void displayHelp()
     cout << "-t hour              : Filter out every request not sent within the interval [hour ; hour+1]" << endl;
     cout << "-u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter" << endl;
     cout << "-x                   : Do not display all undefined referer requests" << endl;
-}
+}//-------Fin de displayHelp
 
 int main(int argc, char* argv[])
 {
@@ -259,4 +256,4 @@ int main(int argc, char* argv[])
     #endif
     
     return EXIT_SUCCESS;
-}
+}//-------Fin de main

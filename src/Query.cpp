@@ -1,22 +1,20 @@
 /*************************************************************************
                            Query  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Réalisation de la classe <Query> (fichier Query.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
-
 //-------------------------------------------------------- Include système
 #include <iostream>
 #include <vector>
 #include <string>
 #include <sstream>
 #include <iomanip>
-#include <algorithm> //for atoi function on linux. If not here, i got some error when compile
+#include <algorithm>
 
 using namespace std;
 
@@ -24,9 +22,7 @@ using namespace std;
 #include "Query.h"
 #include "Tools.h"
 
-//------------------------------------------------------------- Constantes
 //----------------------------------------------------------------- PUBLIC
-
 //----------------------------------------------------- Méthodes publiques
 
 void Query::MakeDate(string strToConvert)
@@ -135,7 +131,3 @@ Query::Query(const string dataIn, const string host_url)
     cout << *this << endl;
 #endif
 } //----- Fin de Query
-
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées

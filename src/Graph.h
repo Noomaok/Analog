@@ -1,9 +1,8 @@
 /*************************************************************************
                            Graph  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Interface de la classe <Graph> (fichier Graph.h) ----------------
@@ -11,20 +10,16 @@
 #define GRAPH_H
 
 //--------------------------------------------------- Interfaces utilisées
-
 #include <set>
 #include <map>
 
 #include "Query.h"
 
-//------------------------------------------------------------- Constantes
-
-//------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Graph>
-//
-//
+//  Générer les fichiers de sorties et gérer la sortie standard pour
+//  l'affichage du top 10 des hits du fichier log
 //------------------------------------------------------------------------
 
 class Graph
@@ -34,35 +29,42 @@ class Graph
 public:
 //----------------------------------------------------- Méthodes publiques
     void createGraphFile(string graph_fileName, unsigned int nArcs);
+    /*
+        Mode d'emploi :
+            graph_fileName -> nom du fichier dot à générer
+            nArcs -> nombre d'arcs à prendre en compte dans la création
+        Contrat :
+            Créer un fichier dot avec le nom fourni avec le nombre d'arcs demandé
+            Si le nombre d'arcs excède la quantité max d'arcs du fichiers, alors le graph
+            s'arrète quand il atteint le max
+    */
 
     void printHits();
     /*
-    Contrat :
-    Affiche les N_PRINT pages les plus consultées (ou l'intégralité des hits
-    si le log en contient moins)
-    Si certaines pages ont le même nombre de hits, elles sont ordonnées par
-    ordre alphabétique décroissant
+        Contrat :
+            Affiche les N_PRINT pages les plus consultées (ou l'intégralité des hits
+            si le log en contient moins)
+            Si certaines pages ont le même nombre de hits, elles sont ordonnées par
+            ordre alphabétique décroissant
     */
 
 //-------------------------------------------- Constructeurs - destructeur
 
     Graph (set<Query>& queryList);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    /*
+        Mode d'emploi :
+            queryList -> liste des requête à utiliser pour générer le graph
+        Contrat :
+            Organise les requêtes passées en paramêtre dans une map pour les tries et les ordonnées
+            pour la suite des traitements
+    */
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- Méthodes protégées
-
 //----------------------------------------------------- Attributs protégés
-
     map<string,int> nodeLinks;
     map<string,int> pageHits;
 };
-
-//-------------------------------- Autres définitions dépendantes de <Graph>
 
 #endif // GRAPH_H

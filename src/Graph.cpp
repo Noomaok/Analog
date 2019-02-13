@@ -1,15 +1,13 @@
 /*************************************************************************
                            Graph  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Réalisation de la classe <Graph> (fichier Graph.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
-
 //-------------------------------------------------------- Include système
 #include <iostream>
 #include <fstream>
@@ -26,8 +24,8 @@ using namespace std;
 
 //------------------------------------------------------------- Constantes
 #define N_PRINT 10
-//----------------------------------------------------------------- PUBLIC
 
+//----------------------------------------------------------------- PUBLIC
 //----------------------------------------------------- Méthodes publiques
 void Graph::createGraphFile(string graph_fileName, unsigned int nArcs)
 {
@@ -51,7 +49,7 @@ void Graph::createGraphFile(string graph_fileName, unsigned int nArcs)
 
     graphFile << "}";
 
-} //----- Fin de Méthode
+} //----- Fin de createGraphFile
 
 void Graph::printHits()
 {
@@ -66,10 +64,9 @@ void Graph::printHits()
         cout << setw(30) << left << r_it->second << " (" << r_it->first << " hits)" << endl;
     }
     cout << endl;
-} //----- Fin de Méthode
+} //----- Fin de printHits
 
 //-------------------------------------------- Constructeurs - destructeur
-
 Graph::Graph (set<Query>& querySet)
 {
     for (set<Query>::iterator it = querySet.begin(); it != querySet.end(); it++)
@@ -103,10 +100,5 @@ Graph::Graph (set<Query>& querySet)
     }
 #ifdef MAP
     cout << "Appel au constructeur de <Graph>" << endl;
-
-    for (map<string,int>::iterator it = nodeLinks.begin(); it != nodeLinks.end(); it++)
-    {
-        cout << "First : " << it->first << " Second : " << it->second << endl;
-    }
 #endif
-} //----- Fin de Graph
+} //----- Fin du constructeur de Graph

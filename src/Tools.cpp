@@ -1,42 +1,29 @@
 /*************************************************************************
                            Tools  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Réalisation du module <Tools> (fichier Tools.cpp) ---------------
 
-/////////////////////////////////////////////////////////////////  INCLUDE
+//---------------------------------------------------------------- INCLUDE
 //-------------------------------------------------------- Include système
 
 #include <iostream>
 #include <sstream>
 #include <vector>
 #include <string>
-#include <algorithm> //for remove_if
+#include <algorithm>
 #include <map>
 
 using namespace std;
+
 //------------------------------------------------------ Include personnel
 #include "Tools.h"
 
-///////////////////////////////////////////////////////////////////  PRIVE
-//------------------------------------------------------------- Constantes
-
-//------------------------------------------------------------------ Types
-
-//---------------------------------------------------- Variables statiques
-
-//------------------------------------------------------ Fonctions privées
-//static type nom ( liste de paramètres )
-
-//////////////////////////////////////////////////////////////////  PUBLIC
+//----------------------------------------------------------------- PUBLIC
 //---------------------------------------------------- Fonctions publiques
-//type Nom ( liste de paramètres )
-// Algorithme :
-//
 
 vector<string> split(string strToSplit, char delimiter)
 {
@@ -49,18 +36,17 @@ vector<string> split(string strToSplit, char delimiter)
         splittedString.push_back(item);
     }
     return splittedString;
-}
+}//-------Fin de split
 
-//flip map(key,value) into multimap(value,key)
 template <typename A, typename B>
 pair<B,A> flip_pair(const pair<A,B> &p)
 {
     return pair<B,A>(p.second, p.first);
-}
+}//--------Fin de flip_pair
 
 multimap<int,string> flip_map(const map<string,int>& src)
 {
     multimap<int,string> dst;
     transform(src.begin(), src.end(), inserter(dst, dst.begin()), flip_pair<string,int>);
     return dst;
-}
+}//--------Fin de flip_map

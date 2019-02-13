@@ -1,15 +1,13 @@
 /*************************************************************************
                            Parser  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 13/02/209
+    copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
 //---------- Réalisation de la classe <Parser> (fichier Parser.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
-
 //-------------------------------------------------------- Include système
 #include <iostream>
 #include <fstream>
@@ -22,10 +20,7 @@ using namespace std;
 #include "Graph.h"
 #include "Query.h"
 
-//------------------------------------------------------------- Constantes
-
 //----------------------------------------------------------------- PUBLIC
-
 //----------------------------------------------------- Méthodes publiques
 
 void Parser::SendDataToGraph(bool convertGraph, string graph_fileName, unsigned int nArcs)
@@ -87,13 +82,9 @@ void Parser::RemoveUndefined()
     }
 }
 
-//------------------------------------------------- Surcharge d'opérateurs
-
 //-------------------------------------------- Constructeurs - destructeur
 
 Parser::Parser (const string log_fileName, const string host_url)
-// Algorithme :
-//
 {
     ifstream logFile;
     logFile.open(log_fileName.c_str());
@@ -111,12 +102,5 @@ Parser::Parser (const string log_fileName, const string host_url)
 
 #ifdef MAP
     cout << "Appel au constructeur de <Parser>" << endl;
-
-    cout << endl << "Nb Exceptions : " << Query::getNbExceptions() << endl;
-    cout << "Nb Requêtes : " << querySet.size() << endl;
 #endif
 } //----- Fin de Parser
-
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées

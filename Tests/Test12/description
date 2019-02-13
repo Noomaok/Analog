@@ -1,2 +1,1 @@
-Test d'appel d'Analog avec l'option "-d" associée à "-g" qui permet de convertir le graphe en format PDF sur un fichier log valide (court.log)
-Remarque : le PDF généré ne peut pas être comparé avec un outfile car les metadata associées à chaque PDF sont différentes
+Test d'appel d'Analog avec l'option "-d" associée à "-g" qui permet de convertir le graphe en format SVG sur un fichier log valide (court.log)

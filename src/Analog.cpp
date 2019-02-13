@@ -54,10 +54,10 @@ bool nextArgCorrect(int index, int size, char** args, string extension = "")
 void displayHelp()
 {
     cout << "-h                   : Display this message" << endl;
-    cout << "-d                   : Generate a PDF version of the graph graph. Must be used with -g" << endl;
     cout << "-e [filter]          : Filter out all requested urls not containing the [filter] string. Referer urls are not affected. Default filter is \".html\"" << endl;
     cout << "-g dot_file_name     : Generate a Dot-file out of the analysed log file" << endl;
     cout << "-n nb_arcs           : When used with -g, specifies the number of arcs in the graph. Default value is 10" << endl;
+    cout << "-d                   : Generate a SVG version of the graph graph. Must be used with -g" << endl;
     cout << "-t hour              : Filter out every request not sent within the interval [hour ; hour+1]" << endl;
     cout << "-u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter" << endl;
     cout << "-x                   : Do not display all undefined referer requests" << endl;
@@ -185,7 +185,7 @@ int main(int argc, char* argv[])
 
                 case 'd':
                     doDrawGraph = true;
-                    cout << "- Generate PDF file of the graph" << endl;
+                    cout << "- Generate SVG file of the graph" << endl;
                     break;
 
                 default:
@@ -236,9 +236,9 @@ int main(int argc, char* argv[])
     {
         if(makeDotFile)
         {
-            string s = "dot -Tpdf -o " + graph_fileName.substr(0,graph_fileName.length()-4) + ".pdf " + graph_fileName;
+            string s = "dot -Tsvg -o " + graph_fileName.substr(0,graph_fileName.length()-4) + ".svg " + graph_fileName;
             system(s.c_str());
-            cout << "Dot-file " << graph_fileName << " converted to PDF file" << endl;
+            cout << "Dot-file " << graph_fileName << " converted to SVG file" << endl;
         }
         else
         {

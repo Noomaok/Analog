@@ -9,7 +9,7 @@ List of available options :
 -e [filter]          : Filter out all requested URL not containing the [filter] string. Referer urls are not affected. Default filter is ".html"
 -g dot_file_name     : Generate a Dot-file out of the analysed log file.
 -n nb_arcs           : Must be used with -g. Specifies the number of arcs in the graph. Default value is 10.
--d                   : Must be used with -g. Generate a PDF of the graph
+-d                   : Must be used with -g. Generate a SVG version of the graph
 -t hour              : Filter out every request not sent within the interval [hour;hour+1]
 -u host_url          : Change the default host url (http://intranet-if.insa-lyon.fr) to the one passed in parameter
 -x                   : Do not display all undefined referer requests
@@ -136,7 +136,7 @@ J'ai eu une idée pour check si le contenu du fichier log qui est passé à notr
 ### Test 19
 
 ```
-./analog -e -g graphTest -n -d 50 -t 14 -x /tmp/anonyme.log
+./analog -e -g graphTest -d -n 50 -t 14 -x /tmp/anonyme.log
 ```
 
 ### Test 20

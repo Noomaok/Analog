@@ -1,6 +1,6 @@
 CPP = g++
 CPPFLAGS = -g -Wall -Werror -pedantic -ansi -DSPEEDTEST #-DMAP std=c++11 has to be put in last
-OPTIMIZATION = -O3 -DSPEEDTEST
+OPTIMIZATION = -O3
 BIN = bin
 EXE = $(BIN)/analog
 INT = $(wildcard src/*.h)

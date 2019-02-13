@@ -1,1 +1,1 @@
-bin/analog -u lol tmp/anonyme.log
+bin/analog -e -g graphTest -d -n 50 -t 14 -x /tmp/anonyme.log

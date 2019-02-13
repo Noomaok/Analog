@@ -1,5 +1,5 @@
 - Generate Dot-file of the graph : graphTest.dot
-- Generate PDF file of the graph
+- Generate SVG file of the graph
 
 10 most requested URL sorted by hits :
 /page3.html                    (6 hits)
@@ -9,4 +9,4 @@
 /page1.html                    (2 hits)
 /edt.css                       (2 hits)
 
-Dot-file graphTest.dot converted to PDF file
+Dot-file graphTest.dot converted to SVG file

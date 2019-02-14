@@ -5,7 +5,7 @@
     copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
-//---------- Réalisation de la classe <Analog> (fichier Analog.cpp) ------------
+//---------- Réalisation du module <Analog> (fichier Analog.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 //-------------------------------------------------------- Include système
@@ -221,7 +221,7 @@ int main(int argc, char* argv[])
     {
         p.FilterHour(parser_hitHour);
     }
-
+    
     if(doFilterUndefined)
     {
         p.RemoveUndefined();

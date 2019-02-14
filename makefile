@@ -25,7 +25,7 @@ release:
 	$(ECHO) "Building release version of <$(EXE)> ..."
 	@ $(CPP) $(OPTIMIZATION) -std=c++11 -o $(EXE) $(REAL)
 
-tests:
+test:
 	$(ECHO) "Running tests ..."
 	@ cd Tests/ && ./mktest.sh
 

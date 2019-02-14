@@ -1,7 +1,7 @@
 /*************************************************************************
                            Query  -  description
                              -------------------
-    début                : 13/02/209
+    début                : 13/02/2019
     copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
@@ -29,7 +29,7 @@ typedef struct Date_t{
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Query>
-//  Contient toute les informations d'une requête d'un fichier log
+// Contient toutes les informations d'une requête du fichier log.
 //
 //------------------------------------------------------------------------
 
@@ -42,13 +42,13 @@ public:
     inline string GetRequestURL() const { return RequestURL; };
     /*
         Contrat :
-            Renvoie l'url demandée par la requête
+            Renvoie l'URL demandée par la requête
     */
 
     inline string GetRefererURL() const { return RefererURL; };
     /*
         Contrat :
-            Renvoie l'url d'origine de la requête
+            Renvoie l'URL d'origine de la requête
     */
 
     inline int GetHour() const { return DateOfQuery.hour; };
@@ -60,9 +60,9 @@ public:
     void MakeDate(string strToConvert);
     /*
         Mode d'emploi :
-            strToConvert -> chaîne de caractères à analyse
+            strToConvert -> chaîne de caractères à analyser
         Contrat :
-            Créer une instance de la structure Date avec les informations contenue dans strToConvert
+            Crée une instance de la structure Date avec les informations contenues dans strToConvert
     */
 
 
@@ -70,13 +70,13 @@ public:
     friend bool operator<(const Query& q1, const Query& q2);
     /*
         Contrat :
-            Renvoie true. Necessaire pour l'insertion dans un set
+            Renvoie true. Necessaire pour l'insertion dans un set.
     */
 
     friend ostream& operator<<(ostream& os, const Query& q);
     /*
         Contrat :
-            Réalise l'affichage de la requête dans le stream utilisé
+            Réalise l'affichage de la requête dans le flux utilisé
     */
 
 
@@ -86,16 +86,16 @@ public:
         Mode d'emploi :
             aQuery -> objet Query à copier
         Contrat :
-            Copie les éléments de aQuery dans la nouvelle instance de Query
+            Copie les attributs de aQuery dans la nouvelle instance de Query
     */
 
     Query(const string dataIn, const string host_url);
     /*
         Mode d'emploi :
-            dataIn -> ligne de fichier contenant les informations d'une requête
-            host_url -> url de l'host utilisé lors de l'analyse
+            dataIn -> ligne de fichier log contenant les informations d'une requête
+            host_url -> URL locale du log
         Contrat :
-            Récupère les informations de dataIn et les stock dans les attributs de la classe
+            Récupère les informations de dataIn et les stocke dans les attributs de la classe
     */
 
 //------------------------------------------------------------------ PRIVE

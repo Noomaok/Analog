@@ -1,7 +1,7 @@
 /*************************************************************************
                            Tools  -  description
                              -------------------
-    début                : 13/02/209
+    début                : 13/02/2019
     copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
@@ -11,8 +11,8 @@
 
 //------------------------------------------------------------------------
 // Rôle du module <Tools>
-//  Permet d'utiliser des méthodes génériques qui sont utilisé par
-//  plusieurs classes.
+// Permet d'utiliser des méthodes génériques dans plusieurs classes.
+//
 //------------------------------------------------------------------------
 
 //---------------------------------------------------------------- INCLUDE
@@ -33,16 +33,16 @@ vector<string> split(string strToSplit, char delimiter);
         strToSplit -> string à découper
         delimiter -> caractère autour duquel strToSplit sera découpé
     Contrat :
-        renvoie un vecteur de strings correspondant aux sous-strings
+        Renvoie un vecteur de strings correspondant aux sous-strings
 */
 
 template <typename A, typename B>
 pair<B,A> flip_pair(const pair<A,B> &p);
 /*
     Mode d'emploi :
-        p -> pair à retourner
+        p -> pair à inverser
     Contrat :
-        renvoie un pair avec les éléments inversés
+        Renvoie une pair avec les éléments inversés
 */
 
 multimap<int,string> flip_map(const map<string,int>& src);
@@ -50,7 +50,8 @@ multimap<int,string> flip_map(const map<string,int>& src);
     Mode d'emploi :
         src -> map à retourner
     Contrat :
-        renvoie une map ayant ces composantes inversées
+        Renvoie une multimap correspondant à l'inversion des pair
+        de tous les éléments de la map src.
 */
 
 #endif // TOOLS_H

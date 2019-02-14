@@ -1,7 +1,7 @@
 /*************************************************************************
                            Graph  -  description
                              -------------------
-    début                : 13/02/209
+    début                : 13/02/2019
     copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
@@ -18,8 +18,8 @@
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Graph>
-//  Générer les fichiers de sorties et gérer la sortie standard pour
-//  l'affichage du top 10 des hits du fichier log
+// Générer les fichiers de sortie et afficher le top 10 des hits du fichier 
+// log sur la sortie standard.
 //------------------------------------------------------------------------
 
 class Graph
@@ -34,7 +34,7 @@ public:
             graph_fileName -> nom du fichier dot à générer
             nArcs -> nombre d'arcs à prendre en compte dans la création
         Contrat :
-            Créer un fichier dot avec le nom fourni avec le nombre d'arcs demandé
+            Crée un fichier dot avec le nom fourni et le nombre d'arcs demandé
             Si le nombre d'arcs excède la quantité max d'arcs du fichiers, alors le graph
             s'arrète quand il atteint le max
     */
@@ -55,7 +55,8 @@ public:
         Mode d'emploi :
             queryList -> liste des requête à utiliser pour générer le graph
         Contrat :
-            Organise les requêtes passées en paramêtre dans une map pour les tries et les ordonnées
+            Organise les requêtes passées en paramêtre dans une map pour les 
+            trier et les ordonnées
             pour la suite des traitements
     */
 

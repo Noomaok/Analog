@@ -1,7 +1,7 @@
 /*************************************************************************
                            Graph  -  description
                              -------------------
-    début                : 13/02/209
+    début                : 13/02/2019
     copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
@@ -85,7 +85,7 @@ Graph::Graph (set<Query>& querySet)
             found->second++;
         }
 
-        //fill pageHits map with concatenated URL and hits counter
+        //fill pageHits map with requested URL and hits counter
         if (pageHits.find(it->GetRequestURL()) == pageHits.end())
         {
             // not found

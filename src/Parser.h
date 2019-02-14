@@ -1,7 +1,7 @@
 /*************************************************************************
                            Parser  -  description
                              -------------------
-    début                : 13/02/209
+    début                : 13/02/2019
     copyright            : (C) 2019 par Baptiste Lotigier et Téo Bouvard
 *************************************************************************/
 
@@ -17,8 +17,9 @@
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Parser>
-//  Analyser et traiter chaque ligne du document envoyer.
-//
+// Analyser et traiter chaque ligne du fichier log afin de créer une liste
+// de requêtes valide. 
+// Filtrer cette liste de requêtes selon les options utilisées.
 //------------------------------------------------------------------------
 
 class Parser
@@ -34,13 +35,13 @@ public:
             graph_fileName -> nom du graphe à générer
             nArcs -> nombre d'arcs a utiliser pour le graphe, valeur par défaut 10
         Contrat :
-            Créer un objet graph pour finir l'analyse du fichier
+            Crée un objet graph pour finir l'analyse du fichier
     */
 
     void FilterURLs(string contain);
     /*
         Mode d'emploi :
-            contain -> chaîne utilisé pour filtrer les urls des requêtes
+            contain -> chaîne de caractère utilisée pour filtrer les urls des requêtes
         Contrat :
             Supprime du set les requêtes qui ne contiennent pas la chaîne de caractères
     */
@@ -48,15 +49,15 @@ public:
     void FilterHour(int hour);
     /*
         Mode d'emploi :
-            hour -> heure utilisé pour filtrer les date des requêtes
+            hour -> heure utilisée pour filtrer les dates des requêtes
         Contrat :
-            Supprime du set les requêtes qui ne se trouvent pas dans la tranche horaires [hour; hour+1[ 
+            Supprime du set les requêtes qui ne se trouvent pas dans la tranche horaire [hour; hour+1[ 
     */
 
     void RemoveUndefined();
     /*
         Contrat:
-            Supprime du set les requêtes qui n'ont pas d'url referer (url Undefined)
+            Supprime du set les requêtes qui n'ont pas d'url referer (URL Undefined)
     */
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -65,10 +66,10 @@ public:
     /*
         Mode d'emploi :
             log_fileName -> nom du fichier log à analyser
-            host_url -> nom de l'host du fichier log
+            host_url -> nom de l'URL locale du fichier log
         Contrat :
-            Ouvre et analyse chaques lignes du fichier.
-            Le fichier doit exister et la vérification doit être faite au préalable
+            Ouvre et analyse chaque ligne du fichier.
+            La vérification de l'exitence du fichier doit être faite au préalable
     */
 
 //------------------------------------------------------------------ PRIVE
